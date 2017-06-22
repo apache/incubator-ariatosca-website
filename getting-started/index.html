@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Getting Started with ARIA TOSCA • Apache ARIA TOSCA</title>
+
+  
+  
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/owl.carousel.css">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/ionicons.min.css">
+  <link rel="stylesheet" href="/css/animate.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+
+  <!-- Js -->
+  <script src="/js/vendor/modernizr-2.6.2.min.js"></script>
+  <script src="/js/vendor/jquery-1.10.2.min.js"></script>
+  <script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/owl.carousel.min.js"></script>
+  <script src="/js/plugins.js"></script>
+
+  <script src="/js/min/waypoints.min.js"></script>
+  <script src="/js/jquery.counterup.js"></script>
+
+
+
+
+
+
+  <script src="/js/main.js"></script>
+  <script src="/js/plugins/jquery.mixitup.min.js"></script>
+
+
+</head>
+
+  <body id="js-body">
+    <!--[if lt IE 9]><div class="upgrade notice-warning"><strong>Your browser is quite old!</strong> Why not <a href="http://whatbrowser.org/">upgrade to a newer one</a> to better enjoy this site?</div><![endif]-->
+
+    <!-- Header Start -->
+<header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <!-- header Nav Start -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+              <img src="/images/aria-logo.png" alt="Apache ARIA TOSCA">
+            </a>
+          </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+              <nav role="navigation" class="menu top-menu">
+                  <ul class="nav navbar-nav navbar-right">
+	<li class="home"><a href="/">Apache ARIA TOSCA</a></li>
+	
+    
+    <li><a href="/about/" >About</a></li>
+  
+    
+    <li><a href="/community/" >Community</a></li>
+  
+    
+    <li><a href="/getting-started/" >Getting Started</a></li>
+  
+    
+    <li><a href="/roadmap/" >Roadmap</a></li>
+  
+</ul>
+
+              </nav>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+    </div>
+  </div>
+</header><!-- header close -->
+
+    
+
+    <div id="page-wrapper">
+      <div id="main" role="main">
+	<article class="wrap" itemscope itemtype="http://schema.org/Article">
+		
+		
+
+		<section id="global-header">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="block">
+							<h1>Getting Started with ARIA TOSCA</h1>
+							<p></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+
+		<div class="inner-wrap">
+			<div id="content" class="page-content" itemprop="articleBody">
+				<section id="intro">
+		      <div class="container">
+		        <div class="row">
+								<h2 id="installation">Installation</h2>
+
+<p>ARIA is <a href="https://pypi.python.org/pypi/ariatosca">available on PyPI</a>.</p>
+
+<p>To install ARIA directly from PyPI (using a <code class="highlighter-rouge">wheel</code>), use:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># pip install aria
+</code></pre>
+</div>
+
+<p>To install ARIA from source, download the source tarball from
+<a href="https://pypi.python.org/pypi/ariatosca">PyPI</a>, extract it, and then when inside the extracted
+directory, use:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># pip install .
+</code></pre>
+</div>
+
+<p>The source package comes along with relevant examples and documentation. Additionally, <code class="highlighter-rouge">requirements.txt</code> is included for
+installing the depending packages with which ARIA was tested.</p>
+
+<p>Note that for the <code class="highlighter-rouge">pip install</code> commands mentioned above, you must use a privileged user, or use
+virtualenv.</p>
+
+<p>ARIA itself is in a <code class="highlighter-rouge">wheel</code> format compatible with all platforms. Some dependencies, however,
+might require compilation (based on a given platform), and therefore possibly some system
+dependencies are required as well.</p>
+
+<p>On Ubuntu or other Debian-based systems::</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt install python-setuptools python-dev build-essential libssl-dev libffi-dev
+</code></pre>
+</div>
+
+<p>On Archlinux::</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo pacman -S python-setuptools
+</code></pre>
+</div>
+
+<p>ARIA requires Python 2.6/2.7. Python 3+ is currently not supported.</p>
+
+<h2 id="getting-started-with-aria-tosca">Getting Started with ARIA TOSCA</h2>
+
+<p>This section will describe how to run a simple “Hello World” example.</p>
+
+<p>First, provide ARIA with the ARIA “hello world” service-template and name it (e.g.
+<code class="highlighter-rouge">my-service-template</code>)::</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>aria service-templates store examples/hello-world/helloworld.yaml my-service-template
+</code></pre>
+</div>
+
+<p>Now create a service based on this service-template and name it (e.g. <code class="highlighter-rouge">my-service</code>)::</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>aria services create my-service -t my-service-template
+</code></pre>
+</div>
+
+<p>Finally, start an <code class="highlighter-rouge">install</code> workflow execution on <code class="highlighter-rouge">my-service</code> like so::</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>aria executions start install -s my-service
+</code></pre>
+</div>
+
+<p>You should now have a simple web-server running on your local machine. You can try visiting
+<code class="highlighter-rouge">http://localhost:9090</code> to view your deployed application.</p>
+
+<p>To uninstall and clean your environment, follow these steps::</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>aria executions start uninstall -s my-service
+aria services delete my-service
+aria service-templates delete my-service-template
+</code></pre>
+</div>
+
+<h2 id="license">License</h2>
+
+<p>ARIA is licensed under the
+<a href="https://github.com/apache/incubator-ariatosca/blob/master/LICENSE">Apache License 2.0</a></p>
+
+		        </div>
+		      </div>
+		    </section>
+				<hr />
+				<footer class="page-footer">
+					
+					
+					
+				</footer><!-- /.footer -->
+				<aside>
+					
+				</aside>
+			</div><!-- /.content -->
+		</div><!-- /.inner-wrap -->
+		
+	</article><!-- ./wrap -->
+</div><!-- /#main -->
+
+      
+
+<!-- Wrapper Start -->
+<section id="intro" style="padding-top:30px; padding-bottom:30px">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10 col-sm-12">
+				<div class="block">
+					<p>
+						Apache ARIA TOSCA is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.
+					</p>
+				</div>
+			</div><!-- .col-md-7 close -->
+			<div class="col-md-2 col-sm-12">
+				<div class="block" valign="middle" style="vertical-align: middle;">
+					<img src="/images/incubator_power_ring.png" alt="ARIA Podling"  >
+				</div>
+			</div><!-- .col-md-5 close -->
+		</div>
+	</div>
+</section>
+
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="footer-manu">
+
+					<ul class="menu-item">
+					
+			      
+						<li><a href="/about/" >About</a></li>
+					
+			      
+						<li><a href="/community/" >Community</a></li>
+					
+			      
+						<li><a href="/getting-started/" >Getting Started</a></li>
+					
+			      
+						<li><a href="/roadmap/" >Roadmap</a></li>
+					
+					</ul>
+				</div>
+
+				<p> Copyright © 2017 The Apache Software Foundation. Licensed under the Apache License, Version 2.0. <br />
+				    Apache, the Apache Feather logo, and the Apache Incubator project logo are trademarks of The Apache Software Foundation.</p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+    </div>
+
+    <script src="/js/vendor/jquery-1.10.2.min.js"></script>
+    <script src="/js/plugins/jquery.mixitup.min.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/jquery.counterup.js"></script>
+
+    <script src="/js/main.js"></script>
+
+  </body>
+
+</html>
