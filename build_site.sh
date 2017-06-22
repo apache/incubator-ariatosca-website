@@ -10,7 +10,7 @@ gem install  --install-dir ${GEM_HOME} bundler
 export PATH=${GEM_HOME}/bin:$PATH
 bundle install --path ${GEM_HOME}
 bundle
-bundle exec jekyll build --destination $WORKDIR $WORKDIR
+bundle exec jekyll build --destination $WORKDIR
 git checkout asf-site
 git clean -f -d
 git pull origin asf-site
