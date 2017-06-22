@@ -2,7 +2,7 @@
 
 title: "Apache ARIA TOSCA"
 description: "ARIA is an agile reference implementation of automation based on OASIS TOSCA Specification. It is a framework for implementing orchestration software and a command line tool to execute TOSCA based application blueprints."
-logo: aria-icon.png
+logo: aria-logo.png
 # 120x120 px default image used for Twitter summary card
 teaser: aria-logo.png
  # 400x250 px default teaser image used in image archive grid
