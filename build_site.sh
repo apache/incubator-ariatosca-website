@@ -3,6 +3,7 @@
 WORKDIR=/tmp/incubator-ariatosca-site
 rm -rf $WORKDIR
 mkdir -p $WORKDIR
+gem install bundler
 bundle exec jekyll build --destination $WORKDIR $WORKDIR
 git checkout asf-site
 git clean -f -d
