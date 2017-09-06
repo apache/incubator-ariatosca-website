@@ -1,0 +1,46 @@
+
+
+<!-- Wrapper Start -->
+<section id="intro" style="padding-top:30px; padding-bottom:30px">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10 col-sm-12">
+				<div class="block">
+					<p>
+						Apache ARIA TOSCA is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.
+					</p>
+				</div>
+			</div><!-- .col-md-7 close -->
+			<div class="col-md-2 col-sm-12">
+				<div class="block" valign="middle" style="vertical-align: middle;">
+					<img src="{{ site.url }}/images/incubator_power_ring.png" alt="ARIA Podling"  >
+				</div>
+			</div><!-- .col-md-5 close -->
+		</div>
+	</div>
+</section>
+
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="footer-manu">
+
+					<ul class="menu-item">
+					{% for link in site.data.footer %}
+			      {% if link.url contains 'http' %}
+			        {% assign domain = '' %}
+			        {% else %}
+			        {% assign domain = site.url %}
+			      {% endif %}
+						<li><a href="{{ domain }}{{ link.url }}" {% if link.url contains 'http' %}target="_blank"{% endif %}>{{ link.title }}</a></li>
+					{% endfor %}
+					</ul>
+				</div>
+
+				<p> Copyright © {{ site.time | date: '%Y' }} The Apache Software Foundation. Licensed under the Apache License, Version 2.0. <br />
+				    Apache, the Apache Feather logo, and the Apache Incubator project logo are trademarks of The Apache Software Foundation.</p>
+			</div>
+		</div>
+	</div>
+</footer>
