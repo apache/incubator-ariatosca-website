@@ -1,0 +1,583 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aria.parser.loading &mdash; ARIA TOSCA 0.1.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="ARIA TOSCA 0.1.1 documentation" href="index.html"/>
+        <link rel="next" title="aria.parser.modeling" href="aria.parser.modeling.html"/>
+        <link rel="prev" title="aria.parser.consumption" href="aria.parser.consumption.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> ARIA TOSCA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">CLI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rest.html">REST</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="aria.html"><code class="docutils literal"><span class="pre">aria</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.cli.html"><code class="docutils literal"><span class="pre">aria.cli</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.modeling.html"><code class="docutils literal"><span class="pre">aria.modeling</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.modeling.models.html"><code class="docutils literal"><span class="pre">aria.modeling.models</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.orchestrator.html"><code class="docutils literal"><span class="pre">aria.orchestrator</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.orchestrator.context.html"><code class="docutils literal"><span class="pre">aria.orchestrator.context</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.orchestrator.execution_plugin.html"><code class="docutils literal"><span class="pre">aria.orchestrator.execution_plugin</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.orchestrator.execution_plugin.ctx_proxy.html"><code class="docutils literal"><span class="pre">aria.orchestrator.execution_plugin.ctx_proxy</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.orchestrator.execution_plugin.ssh.html"><code class="docutils literal"><span class="pre">aria.orchestrator.execution_plugin.ssh</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.orchestrator.workflows.html"><code class="docutils literal"><span class="pre">aria.orchestrator.workflows</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.orchestrator.workflows.api.html"><code class="docutils literal"><span class="pre">aria.orchestrator.workflows.api</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.orchestrator.workflows.builtin.html"><code class="docutils literal"><span class="pre">aria.orchestrator.workflows.builtin</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.orchestrator.workflows.executor.html"><code class="docutils literal"><span class="pre">aria.orchestrator.workflows.executor</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.parser.html"><code class="docutils literal"><span class="pre">aria.parser</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.parser.consumption.html"><code class="docutils literal"><span class="pre">aria.parser.consumption</span></code></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="docutils literal"><span class="pre">aria.parser.loading</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#loaders">Loaders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#locations">Locations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aria.parser.modeling.html"><code class="docutils literal"><span class="pre">aria.parser.modeling</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.parser.presentation.html"><code class="docutils literal"><span class="pre">aria.parser.presentation</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.parser.reading.html"><code class="docutils literal"><span class="pre">aria.parser.reading</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.parser.validation.html"><code class="docutils literal"><span class="pre">aria.parser.validation</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.storage.html"><code class="docutils literal"><span class="pre">aria.storage</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.utils.html"><code class="docutils literal"><span class="pre">aria.utils</span></code></a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aria_extension_tosca.simple_v1_0.html"><code class="docutils literal"><span class="pre">aria_extension_tosca.simple_v1_0</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria_extension_tosca.simple_v1_0.modeling.html"><code class="docutils literal"><span class="pre">aria_extension_tosca.simple_v1_0.modeling</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria_extension_tosca.simple_v1_0.presentation.html"><code class="docutils literal"><span class="pre">aria_extension_tosca.simple_v1_0.presentation</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria_extension_tosca.simple_nfv_v1_0.html"><code class="docutils literal"><span class="pre">aria_extension_tosca.simple_nfv_v1_0</span></code></a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ARIA TOSCA</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li><code class="docutils literal"><span class="pre">aria.parser.loading</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/aria.parser.loading.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-aria.parser.loading">
+<span id="aria-parser-loading"></span><h1><a class="reference internal" href="#module-aria.parser.loading" title="aria.parser.loading"><code class="xref py py-mod docutils literal"><span class="pre">aria.parser.loading</span></code></a><a class="headerlink" href="#module-aria.parser.loading" title="Permalink to this headline">¶</a></h1>
+<p>Loading package.</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#aria.parser.loading.LoadingContext" title="aria.parser.loading.LoadingContext"><code class="xref py py-obj docutils literal"><span class="pre">aria.parser.loading.LoadingContext</span></code></a></td>
+<td>Loading context.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#aria.parser.loading.LoaderException" title="aria.parser.loading.LoaderException"><code class="xref py py-obj docutils literal"><span class="pre">aria.parser.loading.LoaderException</span></code></a></td>
+<td>ARIA loader exception.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#aria.parser.loading.LoaderNotFoundError" title="aria.parser.loading.LoaderNotFoundError"><code class="xref py py-obj docutils literal"><span class="pre">aria.parser.loading.LoaderNotFoundError</span></code></a></td>
+<td>ARIA loader error: loader not found for source.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#aria.parser.loading.DocumentNotFoundException" title="aria.parser.loading.DocumentNotFoundException"><code class="xref py py-obj docutils literal"><span class="pre">aria.parser.loading.DocumentNotFoundException</span></code></a></td>
+<td>ARIA loader exception: document not found.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#aria.parser.loading.LoaderSource" title="aria.parser.loading.LoaderSource"><code class="xref py py-obj docutils literal"><span class="pre">aria.parser.loading.LoaderSource</span></code></a></td>
+<td>Base class for ARIA loader sources.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#aria.parser.loading.DefaultLoaderSource" title="aria.parser.loading.DefaultLoaderSource"><code class="xref py py-obj docutils literal"><span class="pre">aria.parser.loading.DefaultLoaderSource</span></code></a></td>
+<td>The default ARIA loader source will generate a <a class="reference internal" href="#aria.parser.loading.UriTextLoader" title="aria.parser.loading.UriTextLoader"><code class="xref py py-class docutils literal"><span class="pre">UriTextLoader</span></code></a> for <a class="reference internal" href="#aria.parser.loading.UriLocation" title="aria.parser.loading.UriLocation"><code class="xref py py-class docutils literal"><span class="pre">UriLocation</span></code></a> and a <a class="reference internal" href="#aria.parser.loading.LiteralLoader" title="aria.parser.loading.LiteralLoader"><code class="xref py py-class docutils literal"><span class="pre">LiteralLoader</span></code></a> for a <a class="reference internal" href="#aria.parser.loading.LiteralLocation" title="aria.parser.loading.LiteralLocation"><code class="xref py py-class docutils literal"><span class="pre">LiteralLocation</span></code></a>.</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="loaders">
+<h2>Loaders<a class="headerlink" href="#loaders" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#aria.parser.loading.Loader" title="aria.parser.loading.Loader"><code class="xref py py-obj docutils literal"><span class="pre">aria.parser.loading.Loader</span></code></a></td>
+<td>Base class for ARIA loaders.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#aria.parser.loading.FileTextLoader" title="aria.parser.loading.FileTextLoader"><code class="xref py py-obj docutils literal"><span class="pre">aria.parser.loading.FileTextLoader</span></code></a></td>
+<td>ARIA file text loader.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#aria.parser.loading.LiteralLoader" title="aria.parser.loading.LiteralLoader"><code class="xref py py-obj docutils literal"><span class="pre">aria.parser.loading.LiteralLoader</span></code></a></td>
+<td>ARIA literal loader.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#aria.parser.loading.RequestLoader" title="aria.parser.loading.RequestLoader"><code class="xref py py-obj docutils literal"><span class="pre">aria.parser.loading.RequestLoader</span></code></a></td>
+<td>Base class for ARIA request-based loaders.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#aria.parser.loading.RequestTextLoader" title="aria.parser.loading.RequestTextLoader"><code class="xref py py-obj docutils literal"><span class="pre">aria.parser.loading.RequestTextLoader</span></code></a></td>
+<td>ARIA request-based text loader.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#aria.parser.loading.UriTextLoader" title="aria.parser.loading.UriTextLoader"><code class="xref py py-obj docutils literal"><span class="pre">aria.parser.loading.UriTextLoader</span></code></a></td>
+<td>Base class for ARIA URI loaders.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="locations">
+<h2>Locations<a class="headerlink" href="#locations" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#aria.parser.loading.Location" title="aria.parser.loading.Location"><code class="xref py py-obj docutils literal"><span class="pre">aria.parser.loading.Location</span></code></a></td>
+<td>Base class for ARIA locations.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#aria.parser.loading.UriLocation" title="aria.parser.loading.UriLocation"><code class="xref py py-obj docutils literal"><span class="pre">aria.parser.loading.UriLocation</span></code></a></td>
+<td>A URI location can be absolute or relative, and can include a scheme or not.</td>
+</tr>
+</tbody>
+</table>
+<dl class="exception">
+<dt id="aria.parser.loading.LoaderException">
+<em class="property">exception </em><code class="descclassname">aria.parser.loading.</code><code class="descname">LoaderException</code><span class="sig-paren">(</span><em>message=None</em>, <em>cause=None</em>, <em>cause_traceback=None</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.parser.loading.LoaderException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="aria.html#aria.exceptions.AriaException" title="aria.exceptions.AriaException"><code class="xref py py-class docutils literal"><span class="pre">aria.exceptions.AriaException</span></code></a></p>
+<p>ARIA loader exception.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="aria.parser.loading.LoaderNotFoundError">
+<em class="property">exception </em><code class="descclassname">aria.parser.loading.</code><code class="descname">LoaderNotFoundError</code><span class="sig-paren">(</span><em>message=None</em>, <em>cause=None</em>, <em>cause_traceback=None</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.parser.loading.LoaderNotFoundError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">aria.parser.loading.exceptions.LoaderException</span></code></p>
+<p>ARIA loader error: loader not found for source.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="aria.parser.loading.DocumentNotFoundException">
+<em class="property">exception </em><code class="descclassname">aria.parser.loading.</code><code class="descname">DocumentNotFoundException</code><span class="sig-paren">(</span><em>message=None</em>, <em>cause=None</em>, <em>cause_traceback=None</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.parser.loading.DocumentNotFoundException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">aria.parser.loading.exceptions.LoaderException</span></code></p>
+<p>ARIA loader exception: document not found.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="aria.parser.loading.LoadingContext">
+<em class="property">class </em><code class="descclassname">aria.parser.loading.</code><code class="descname">LoadingContext</code><a class="headerlink" href="#aria.parser.loading.LoadingContext" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2.7/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>Loading context.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Variables:</th><td class="field-body"><ul class="first last simple">
+<li><strong>loader_source</strong> (<a class="reference internal" href="#aria.parser.loading.LoaderSource" title="aria.parser.loading.LoaderSource"><em>LoaderSource</em></a>) – for finding loader instances</li>
+<li><strong>prefixes</strong> ([<a class="reference external" href="https://docs.python.org/2.7/library/functions.html#basestring" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">basestring</span></code></a>]) – additional prefixes for <a class="reference internal" href="#aria.parser.loading.UriTextLoader" title="aria.parser.loading.UriTextLoader"><code class="xref py py-class docutils literal"><span class="pre">UriTextLoader</span></code></a></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="aria.parser.loading.Loader">
+<em class="property">class </em><code class="descclassname">aria.parser.loading.</code><code class="descname">Loader</code><a class="headerlink" href="#aria.parser.loading.Loader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2.7/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>Base class for ARIA loaders.</p>
+<p>Loaders extract a document by consuming a document source.</p>
+<p>Though the extracted document is often textual (a string or string-like
+data), loaders may provide any format.</p>
+<dl class="method">
+<dt id="aria.parser.loading.Loader.close">
+<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aria.parser.loading.Loader.close" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aria.parser.loading.Loader.load">
+<code class="descname">load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aria.parser.loading.Loader.load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aria.parser.loading.Loader.open">
+<code class="descname">open</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aria.parser.loading.Loader.open" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="aria.parser.loading.LoaderSource">
+<em class="property">class </em><code class="descclassname">aria.parser.loading.</code><code class="descname">LoaderSource</code><a class="headerlink" href="#aria.parser.loading.LoaderSource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2.7/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>Base class for ARIA loader sources.</p>
+<p>Loader sources provide appropriate <a class="reference internal" href="#aria.parser.loading.Loader" title="aria.parser.loading.Loader"><code class="xref py py-class docutils literal"><span class="pre">Loader</span></code></a> instances for locations.</p>
+<dl class="method">
+<dt id="aria.parser.loading.LoaderSource.get_loader">
+<code class="descname">get_loader</code><span class="sig-paren">(</span><em>context</em>, <em>location</em>, <em>origin_location</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.parser.loading.LoaderSource.get_loader" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="aria.parser.loading.DefaultLoaderSource">
+<em class="property">class </em><code class="descclassname">aria.parser.loading.</code><code class="descname">DefaultLoaderSource</code><a class="headerlink" href="#aria.parser.loading.DefaultLoaderSource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">aria.parser.loading.source.LoaderSource</span></code></p>
+<p>The default ARIA loader source will generate a <a class="reference internal" href="#aria.parser.loading.UriTextLoader" title="aria.parser.loading.UriTextLoader"><code class="xref py py-class docutils literal"><span class="pre">UriTextLoader</span></code></a> for
+<a class="reference internal" href="#aria.parser.loading.UriLocation" title="aria.parser.loading.UriLocation"><code class="xref py py-class docutils literal"><span class="pre">UriLocation</span></code></a> and a <a class="reference internal" href="#aria.parser.loading.LiteralLoader" title="aria.parser.loading.LiteralLoader"><code class="xref py py-class docutils literal"><span class="pre">LiteralLoader</span></code></a> for a <a class="reference internal" href="#aria.parser.loading.LiteralLocation" title="aria.parser.loading.LiteralLocation"><code class="xref py py-class docutils literal"><span class="pre">LiteralLocation</span></code></a>.</p>
+<dl class="method">
+<dt id="aria.parser.loading.DefaultLoaderSource.get_loader">
+<code class="descname">get_loader</code><span class="sig-paren">(</span><em>context</em>, <em>location</em>, <em>origin_location</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.parser.loading.DefaultLoaderSource.get_loader" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="aria.parser.loading.Location">
+<em class="property">class </em><code class="descclassname">aria.parser.loading.</code><code class="descname">Location</code><a class="headerlink" href="#aria.parser.loading.Location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2.7/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>Base class for ARIA locations.</p>
+<p>Locations are used by <a class="reference internal" href="#aria.parser.loading.LoaderSource" title="aria.parser.loading.LoaderSource"><code class="xref py py-class docutils literal"><span class="pre">LoaderSource</span></code></a> to delegate to
+an appropriate <a class="reference internal" href="#aria.parser.loading.Loader" title="aria.parser.loading.Loader"><code class="xref py py-class docutils literal"><span class="pre">Loader</span></code></a>.</p>
+<dl class="method">
+<dt id="aria.parser.loading.Location.is_equivalent">
+<code class="descname">is_equivalent</code><span class="sig-paren">(</span><em>location</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.parser.loading.Location.is_equivalent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aria.parser.loading.Location.prefix">
+<code class="descname">prefix</code><a class="headerlink" href="#aria.parser.loading.Location.prefix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="aria.parser.loading.UriLocation">
+<em class="property">class </em><code class="descclassname">aria.parser.loading.</code><code class="descname">UriLocation</code><span class="sig-paren">(</span><em>uri</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.parser.loading.UriLocation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">aria.parser.loading.location.Location</span></code></p>
+<p>A URI location can be absolute or relative, and can include a scheme or not.</p>
+<p>If no scheme is included, it should be treated as a filesystem path.</p>
+<p>See <a class="reference internal" href="#aria.parser.loading.UriTextLoader" title="aria.parser.loading.UriTextLoader"><code class="xref py py-class docutils literal"><span class="pre">UriTextLoader</span></code></a>.</p>
+<dl class="method">
+<dt id="aria.parser.loading.UriLocation.is_equivalent">
+<code class="descname">is_equivalent</code><span class="sig-paren">(</span><em>location</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.parser.loading.UriLocation.is_equivalent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aria.parser.loading.UriLocation.prefix">
+<code class="descname">prefix</code><a class="headerlink" href="#aria.parser.loading.UriLocation.prefix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="aria.parser.loading.LiteralLocation">
+<em class="property">class </em><code class="descclassname">aria.parser.loading.</code><code class="descname">LiteralLocation</code><span class="sig-paren">(</span><em>content</em>, <em>name='literal'</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.parser.loading.LiteralLocation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">aria.parser.loading.location.Location</span></code></p>
+<p>A location that embeds content.</p>
+<p>See <a class="reference internal" href="#aria.parser.loading.LiteralLoader" title="aria.parser.loading.LiteralLoader"><code class="xref py py-class docutils literal"><span class="pre">LiteralLoader</span></code></a>.</p>
+<dl class="method">
+<dt id="aria.parser.loading.LiteralLocation.is_equivalent">
+<code class="descname">is_equivalent</code><span class="sig-paren">(</span><em>location</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.parser.loading.LiteralLocation.is_equivalent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="aria.parser.loading.LiteralLoader">
+<em class="property">class </em><code class="descclassname">aria.parser.loading.</code><code class="descname">LiteralLoader</code><span class="sig-paren">(</span><em>location</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.parser.loading.LiteralLoader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">aria.parser.loading.loader.Loader</span></code></p>
+<p>ARIA literal loader.</p>
+<p>See <a class="reference internal" href="#aria.parser.loading.LiteralLocation" title="aria.parser.loading.LiteralLocation"><code class="xref py py-class docutils literal"><span class="pre">LiteralLocation</span></code></a>.</p>
+<dl class="method">
+<dt id="aria.parser.loading.LiteralLoader.load">
+<code class="descname">load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aria.parser.loading.LiteralLoader.load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="aria.parser.loading.UriTextLoader">
+<em class="property">class </em><code class="descclassname">aria.parser.loading.</code><code class="descname">UriTextLoader</code><span class="sig-paren">(</span><em>context</em>, <em>location</em>, <em>origin_location=None</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.parser.loading.UriTextLoader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">aria.parser.loading.loader.Loader</span></code></p>
+<p>Base class for ARIA URI loaders.</p>
+<p>See <a class="reference internal" href="#aria.parser.loading.UriLocation" title="aria.parser.loading.UriLocation"><code class="xref py py-class docutils literal"><span class="pre">UriLocation</span></code></a>.</p>
+<p>Supports a list of search prefixes that are tried in order if the URI cannot be found.
+They will be:</p>
+<ul class="simple">
+<li>If <code class="docutils literal"><span class="pre">origin_location</span></code> is provided its prefix will come first.</li>
+<li>Then the prefixes in the <a class="reference internal" href="#aria.parser.loading.LoadingContext" title="aria.parser.loading.LoadingContext"><code class="xref py py-class docutils literal"><span class="pre">LoadingContext</span></code></a> will be added.</li>
+<li>Finally, the parser can supply a <code class="docutils literal"><span class="pre">uri_loader_prefix</span></code> function with extra prefixes.</li>
+</ul>
+<dl class="method">
+<dt id="aria.parser.loading.UriTextLoader.close">
+<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aria.parser.loading.UriTextLoader.close" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aria.parser.loading.UriTextLoader.load">
+<code class="descname">load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aria.parser.loading.UriTextLoader.load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aria.parser.loading.UriTextLoader.open">
+<code class="descname">open</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aria.parser.loading.UriTextLoader.open" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="aria.parser.loading.RequestLoader">
+<em class="property">class </em><code class="descclassname">aria.parser.loading.</code><code class="descname">RequestLoader</code><span class="sig-paren">(</span><em>context</em>, <em>uri</em>, <em>headers=None</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.parser.loading.RequestLoader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">aria.parser.loading.loader.Loader</span></code></p>
+<p>Base class for ARIA request-based loaders.</p>
+<p>Extracts a document from a URI by performing a request.</p>
+<p>Note that the “file:” schema is not supported: <a class="reference internal" href="#aria.parser.loading.FileTextLoader" title="aria.parser.loading.FileTextLoader"><code class="xref py py-class docutils literal"><span class="pre">FileTextLoader</span></code></a> should
+be used instead.</p>
+<dl class="method">
+<dt id="aria.parser.loading.RequestLoader.load">
+<code class="descname">load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aria.parser.loading.RequestLoader.load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aria.parser.loading.RequestLoader.open">
+<code class="descname">open</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aria.parser.loading.RequestLoader.open" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="aria.parser.loading.RequestTextLoader">
+<em class="property">class </em><code class="descclassname">aria.parser.loading.</code><code class="descname">RequestTextLoader</code><span class="sig-paren">(</span><em>context</em>, <em>uri</em>, <em>headers=None</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.parser.loading.RequestTextLoader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">aria.parser.loading.request.RequestLoader</span></code></p>
+<p>ARIA request-based text loader.</p>
+<dl class="method">
+<dt id="aria.parser.loading.RequestTextLoader.load">
+<code class="descname">load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aria.parser.loading.RequestTextLoader.load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="aria.parser.loading.FileTextLoader">
+<em class="property">class </em><code class="descclassname">aria.parser.loading.</code><code class="descname">FileTextLoader</code><span class="sig-paren">(</span><em>context</em>, <em>path</em>, <em>encoding='utf-8'</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.parser.loading.FileTextLoader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">aria.parser.loading.loader.Loader</span></code></p>
+<p>ARIA file text loader.</p>
+<p>Extracts a text document from a file. The default encoding is UTF-8, but other supported
+encoding can be specified instead.</p>
+<dl class="method">
+<dt id="aria.parser.loading.FileTextLoader.close">
+<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aria.parser.loading.FileTextLoader.close" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aria.parser.loading.FileTextLoader.load">
+<code class="descname">load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aria.parser.loading.FileTextLoader.load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aria.parser.loading.FileTextLoader.open">
+<code class="descname">open</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aria.parser.loading.FileTextLoader.open" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="aria.parser.modeling.html" class="btn btn-neutral float-right" title="aria.parser.modeling" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="aria.parser.consumption.html" class="btn btn-neutral" title="aria.parser.consumption" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2017, Apache Software Foundation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

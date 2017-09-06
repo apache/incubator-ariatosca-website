@@ -11,6 +11,20 @@ export PATH=${GEM_HOME}/bin:$PATH
 bundle install --path ${GEM_HOME}
 bundle
 bundle exec jekyll build --destination $WORKDIR
+
+# Set env for docs
+ARIAVERSION=0.1.1
+DISTPATH=https://dist.apache.org/repos/dist/dev/incubator/ariatosca/$ARIAVERSION-incubating/sdist/apache-ariatosca-$ARIAVERSION.tar.gz
+DISTFILE=apache-ariatosca-$ARIAVERSION.tar.gz
+
+# Copy docs
+wget -P $WORKDIR $DISTPATH
+tar -C $WORKDIR -xzf $WORKDIR/$DISTFILE apache-ariatosca-$ARIAVERSION/docs
+mkdir -p $WORKDIR/_site/docs
+mv $WORKDIR/apache-ariatosca-$ARIAVERSION/docs $WORKDIR/_site/docs
+rm -f $WORKDIR/$DISTFILE
+
+# Push
 git checkout asf-site
 git clean -f -d
 git pull origin asf-site

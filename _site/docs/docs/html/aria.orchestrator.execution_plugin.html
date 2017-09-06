@@ -1,0 +1,431 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aria.orchestrator.execution_plugin &mdash; ARIA TOSCA 0.1.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="ARIA TOSCA 0.1.1 documentation" href="index.html"/>
+        <link rel="next" title="aria.orchestrator.execution_plugin.ctx_proxy" href="aria.orchestrator.execution_plugin.ctx_proxy.html"/>
+        <link rel="prev" title="aria.orchestrator.context" href="aria.orchestrator.context.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> ARIA TOSCA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">CLI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rest.html">REST</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="aria.html"><code class="docutils literal"><span class="pre">aria</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.cli.html"><code class="docutils literal"><span class="pre">aria.cli</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.modeling.html"><code class="docutils literal"><span class="pre">aria.modeling</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.modeling.models.html"><code class="docutils literal"><span class="pre">aria.modeling.models</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.orchestrator.html"><code class="docutils literal"><span class="pre">aria.orchestrator</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.orchestrator.context.html"><code class="docutils literal"><span class="pre">aria.orchestrator.context</span></code></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="docutils literal"><span class="pre">aria.orchestrator.execution_plugin</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-aria.orchestrator.execution_plugin.common"><code class="docutils literal"><span class="pre">aria.orchestrator.execution_plugin.common</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-aria.orchestrator.execution_plugin.constants"><code class="docutils literal"><span class="pre">aria.orchestrator.execution_plugin.constants</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-aria.orchestrator.execution_plugin.environment_globals"><code class="docutils literal"><span class="pre">aria.orchestrator.execution_plugin.environment_globals</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-aria.orchestrator.execution_plugin.exceptions"><code class="docutils literal"><span class="pre">aria.orchestrator.execution_plugin.exceptions</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-aria.orchestrator.execution_plugin.instantiation"><code class="docutils literal"><span class="pre">aria.orchestrator.execution_plugin.instantiation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-aria.orchestrator.execution_plugin.local"><code class="docutils literal"><span class="pre">aria.orchestrator.execution_plugin.local</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-aria.orchestrator.execution_plugin.operations"><code class="docutils literal"><span class="pre">aria.orchestrator.execution_plugin.operations</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aria.orchestrator.execution_plugin.ctx_proxy.html"><code class="docutils literal"><span class="pre">aria.orchestrator.execution_plugin.ctx_proxy</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.orchestrator.execution_plugin.ssh.html"><code class="docutils literal"><span class="pre">aria.orchestrator.execution_plugin.ssh</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.orchestrator.workflows.html"><code class="docutils literal"><span class="pre">aria.orchestrator.workflows</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.orchestrator.workflows.api.html"><code class="docutils literal"><span class="pre">aria.orchestrator.workflows.api</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.orchestrator.workflows.builtin.html"><code class="docutils literal"><span class="pre">aria.orchestrator.workflows.builtin</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.orchestrator.workflows.executor.html"><code class="docutils literal"><span class="pre">aria.orchestrator.workflows.executor</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.parser.html"><code class="docutils literal"><span class="pre">aria.parser</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.parser.consumption.html"><code class="docutils literal"><span class="pre">aria.parser.consumption</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.parser.loading.html"><code class="docutils literal"><span class="pre">aria.parser.loading</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.parser.modeling.html"><code class="docutils literal"><span class="pre">aria.parser.modeling</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.parser.presentation.html"><code class="docutils literal"><span class="pre">aria.parser.presentation</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.parser.reading.html"><code class="docutils literal"><span class="pre">aria.parser.reading</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.parser.validation.html"><code class="docutils literal"><span class="pre">aria.parser.validation</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.storage.html"><code class="docutils literal"><span class="pre">aria.storage</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.utils.html"><code class="docutils literal"><span class="pre">aria.utils</span></code></a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aria_extension_tosca.simple_v1_0.html"><code class="docutils literal"><span class="pre">aria_extension_tosca.simple_v1_0</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria_extension_tosca.simple_v1_0.modeling.html"><code class="docutils literal"><span class="pre">aria_extension_tosca.simple_v1_0.modeling</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria_extension_tosca.simple_v1_0.presentation.html"><code class="docutils literal"><span class="pre">aria_extension_tosca.simple_v1_0.presentation</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria_extension_tosca.simple_nfv_v1_0.html"><code class="docutils literal"><span class="pre">aria_extension_tosca.simple_nfv_v1_0</span></code></a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ARIA TOSCA</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li><code class="docutils literal"><span class="pre">aria.orchestrator.execution_plugin</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/aria.orchestrator.execution_plugin.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-aria.orchestrator.execution_plugin">
+<span id="aria-orchestrator-execution-plugin"></span><h1><a class="reference internal" href="#module-aria.orchestrator.execution_plugin" title="aria.orchestrator.execution_plugin"><code class="xref py py-mod docutils literal"><span class="pre">aria.orchestrator.execution_plugin</span></code></a><a class="headerlink" href="#module-aria.orchestrator.execution_plugin" title="Permalink to this headline">¶</a></h1>
+<p>Execution plugin package.</p>
+<dl class="function">
+<dt id="aria.orchestrator.execution_plugin.python_script_scope">
+<code class="descclassname">aria.orchestrator.execution_plugin.</code><code class="descname">python_script_scope</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwds</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.orchestrator.execution_plugin.python_script_scope" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="section" id="module-aria.orchestrator.execution_plugin.common">
+<span id="aria-orchestrator-execution-plugin-common"></span><h2><a class="reference internal" href="#module-aria.orchestrator.execution_plugin.common" title="aria.orchestrator.execution_plugin.common"><code class="xref py py-mod docutils literal"><span class="pre">aria.orchestrator.execution_plugin.common</span></code></a><a class="headerlink" href="#module-aria.orchestrator.execution_plugin.common" title="Permalink to this headline">¶</a></h2>
+<p>Execution plugin utilities.</p>
+<dl class="function">
+<dt id="aria.orchestrator.execution_plugin.common.check_error">
+<code class="descclassname">aria.orchestrator.execution_plugin.common.</code><code class="descname">check_error</code><span class="sig-paren">(</span><em>ctx</em>, <em>error_check_func=None</em>, <em>reraise=False</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.orchestrator.execution_plugin.common.check_error" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="aria.orchestrator.execution_plugin.common.create_process_config">
+<code class="descclassname">aria.orchestrator.execution_plugin.common.</code><code class="descname">create_process_config</code><span class="sig-paren">(</span><em>script_path</em>, <em>process</em>, <em>operation_kwargs</em>, <em>quote_json_env_vars=False</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.orchestrator.execution_plugin.common.create_process_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates a process with its environment variables, and return it.</p>
+<p>Gets a dict representing a process and a dict representing the environment variables. Converts
+each environment variable to a format of:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">string</span> <span class="n">representing</span> <span class="n">the</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">variable</span><span class="o">&gt;</span><span class="p">:</span>
+<span class="o">&lt;</span><span class="n">json</span> <span class="n">formatted</span> <span class="n">string</span> <span class="n">representing</span> <span class="n">the</span> <span class="n">value</span> <span class="n">of</span> <span class="n">the</span> <span class="n">variable</span><span class="o">&gt;.</span>
+</pre></div>
+</div>
+<p>Finally, updates the process with the newly formatted environment variables, and return the
+process.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>process</strong> (<a class="reference external" href="https://docs.python.org/2.7/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) – dict representing a process</li>
+<li><strong>operation_kwargs</strong> (<a class="reference external" href="https://docs.python.org/2.7/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) – dict representing environment variables that should exist in the
+process’s running environment.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">process updated with its environment variables</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2.7/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="aria.orchestrator.execution_plugin.common.download_script">
+<code class="descclassname">aria.orchestrator.execution_plugin.common.</code><code class="descname">download_script</code><span class="sig-paren">(</span><em>ctx</em>, <em>script_path</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.orchestrator.execution_plugin.common.download_script" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="aria.orchestrator.execution_plugin.common.is_windows">
+<code class="descclassname">aria.orchestrator.execution_plugin.common.</code><code class="descname">is_windows</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aria.orchestrator.execution_plugin.common.is_windows" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="aria.orchestrator.execution_plugin.common.patch_ctx">
+<code class="descclassname">aria.orchestrator.execution_plugin.common.</code><code class="descname">patch_ctx</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.orchestrator.execution_plugin.common.patch_ctx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-aria.orchestrator.execution_plugin.constants">
+<span id="aria-orchestrator-execution-plugin-constants"></span><h2><a class="reference internal" href="#module-aria.orchestrator.execution_plugin.constants" title="aria.orchestrator.execution_plugin.constants"><code class="xref py py-mod docutils literal"><span class="pre">aria.orchestrator.execution_plugin.constants</span></code></a><a class="headerlink" href="#module-aria.orchestrator.execution_plugin.constants" title="Permalink to this headline">¶</a></h2>
+<p>Execution plugin constants.</p>
+</div>
+<div class="section" id="module-aria.orchestrator.execution_plugin.environment_globals">
+<span id="aria-orchestrator-execution-plugin-environment-globals"></span><h2><a class="reference internal" href="#module-aria.orchestrator.execution_plugin.environment_globals" title="aria.orchestrator.execution_plugin.environment_globals"><code class="xref py py-mod docutils literal"><span class="pre">aria.orchestrator.execution_plugin.environment_globals</span></code></a><a class="headerlink" href="#module-aria.orchestrator.execution_plugin.environment_globals" title="Permalink to this headline">¶</a></h2>
+<p>Utilities for managing globals for the environment.</p>
+<dl class="function">
+<dt id="aria.orchestrator.execution_plugin.environment_globals.create_initial_globals">
+<code class="descclassname">aria.orchestrator.execution_plugin.environment_globals.</code><code class="descname">create_initial_globals</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.orchestrator.execution_plugin.environment_globals.create_initial_globals" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emulates a <code class="docutils literal"><span class="pre">globals()</span></code> call in a freshly loaded module.</p>
+<p>The implementation of this function is likely to raise a couple of questions. If you read the
+implementation and nothing bothered you, feel free to skip the rest of this docstring.</p>
+<p>First, why is this function in its own module and not, say, in the same module of the other
+environment-related functions? Second, why is it implemented in such a way that copies the
+globals, then deletes the item that represents this function, and then changes some other
+entries?</p>
+<p>Well, these two questions can be answered with one (elaborate) explanation. If this function was
+in the same module with the other environment-related functions, then we would have had to
+delete more items in globals than just <code class="docutils literal"><span class="pre">create_initial_globals</span></code>. That is because all of the
+other function names would also be in globals, and since there is no built-in mechanism that
+return the name of the user-defined objects, this approach is quite an overkill.</p>
+<p><em>But why do we rely on the copy-existing-globals-and-delete-entries method, when it seems to
+force us to put ``create_initial_globals`` in its own file?</em></p>
+<p>Well, because there is no easier method of creating globals of a newly loaded module.</p>
+<p><em>How about hard coding a ``globals`` dict? It seems that there are very few entries:
+``__doc__``, ``__file__``, ``__name__``, ``__package__`` (but don’t forget ``__builtins__``).</em></p>
+<p>That would be coupling our implementation to a specific <code class="docutils literal"><span class="pre">globals</span></code> implementation. What if
+<code class="docutils literal"><span class="pre">globals</span></code> were to change?</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-aria.orchestrator.execution_plugin.exceptions">
+<span id="aria-orchestrator-execution-plugin-exceptions"></span><h2><a class="reference internal" href="#module-aria.orchestrator.execution_plugin.exceptions" title="aria.orchestrator.execution_plugin.exceptions"><code class="xref py py-mod docutils literal"><span class="pre">aria.orchestrator.execution_plugin.exceptions</span></code></a><a class="headerlink" href="#module-aria.orchestrator.execution_plugin.exceptions" title="Permalink to this headline">¶</a></h2>
+<p>Execution plugin exceptions.</p>
+<dl class="exception">
+<dt id="aria.orchestrator.execution_plugin.exceptions.ProcessException">
+<em class="property">exception </em><code class="descclassname">aria.orchestrator.execution_plugin.exceptions.</code><code class="descname">ProcessException</code><span class="sig-paren">(</span><em>stderr=None</em>, <em>stdout=None</em>, <em>command=None</em>, <em>exit_code=None</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.orchestrator.execution_plugin.exceptions.ProcessException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2.7/library/exceptions.html#exceptions.Exception" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></code></a></p>
+<p>Raised when local scripts and remote SSH commands fail.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="aria.orchestrator.execution_plugin.exceptions.ScriptException">
+<em class="property">exception </em><code class="descclassname">aria.orchestrator.execution_plugin.exceptions.</code><code class="descname">ScriptException</code><span class="sig-paren">(</span><em>message=None</em>, <em>retry=None</em>, <em>retry_interval=None</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.orchestrator.execution_plugin.exceptions.ScriptException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2.7/library/exceptions.html#exceptions.Exception" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></code></a></p>
+<p>Used by the <code class="docutils literal"><span class="pre">ctx</span></code> proxy server when task.retry or task.abort are called by scripts.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="aria.orchestrator.execution_plugin.exceptions.TaskException">
+<em class="property">exception </em><code class="descclassname">aria.orchestrator.execution_plugin.exceptions.</code><code class="descname">TaskException</code><a class="headerlink" href="#aria.orchestrator.execution_plugin.exceptions.TaskException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2.7/library/exceptions.html#exceptions.Exception" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></code></a></p>
+<p>Raised when remote ssh scripts fail.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-aria.orchestrator.execution_plugin.instantiation">
+<span id="aria-orchestrator-execution-plugin-instantiation"></span><h2><a class="reference internal" href="#module-aria.orchestrator.execution_plugin.instantiation" title="aria.orchestrator.execution_plugin.instantiation"><code class="xref py py-mod docutils literal"><span class="pre">aria.orchestrator.execution_plugin.instantiation</span></code></a><a class="headerlink" href="#module-aria.orchestrator.execution_plugin.instantiation" title="Permalink to this headline">¶</a></h2>
+<p>Instantiation of <a class="reference internal" href="aria.modeling.models.html#aria.modeling.models.Operation" title="aria.modeling.models.Operation"><code class="xref py py-class docutils literal"><span class="pre">Operation</span></code></a> models.</p>
+<dl class="function">
+<dt id="aria.orchestrator.execution_plugin.instantiation.configure_operation">
+<code class="descclassname">aria.orchestrator.execution_plugin.instantiation.</code><code class="descname">configure_operation</code><span class="sig-paren">(</span><em>operation</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.orchestrator.execution_plugin.instantiation.configure_operation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-aria.orchestrator.execution_plugin.local">
+<span id="aria-orchestrator-execution-plugin-local"></span><h2><a class="reference internal" href="#module-aria.orchestrator.execution_plugin.local" title="aria.orchestrator.execution_plugin.local"><code class="xref py py-mod docutils literal"><span class="pre">aria.orchestrator.execution_plugin.local</span></code></a><a class="headerlink" href="#module-aria.orchestrator.execution_plugin.local" title="Permalink to this headline">¶</a></h2>
+<p>Local execution of operations.</p>
+<dl class="function">
+<dt id="aria.orchestrator.execution_plugin.local.run_script">
+<code class="descclassname">aria.orchestrator.execution_plugin.local.</code><code class="descname">run_script</code><span class="sig-paren">(</span><em>ctx</em>, <em>script_path</em>, <em>process</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.orchestrator.execution_plugin.local.run_script" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-aria.orchestrator.execution_plugin.operations">
+<span id="aria-orchestrator-execution-plugin-operations"></span><h2><a class="reference internal" href="#module-aria.orchestrator.execution_plugin.operations" title="aria.orchestrator.execution_plugin.operations"><code class="xref py py-mod docutils literal"><span class="pre">aria.orchestrator.execution_plugin.operations</span></code></a><a class="headerlink" href="#module-aria.orchestrator.execution_plugin.operations" title="Permalink to this headline">¶</a></h2>
+<p>Entry point functions.</p>
+<dl class="function">
+<dt id="aria.orchestrator.execution_plugin.operations.run_commands_with_ssh">
+<code class="descclassname">aria.orchestrator.execution_plugin.operations.</code><code class="descname">run_commands_with_ssh</code><span class="sig-paren">(</span><em>**func_kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.orchestrator.execution_plugin.operations.run_commands_with_ssh" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="aria.orchestrator.execution_plugin.operations.run_script_locally">
+<code class="descclassname">aria.orchestrator.execution_plugin.operations.</code><code class="descname">run_script_locally</code><span class="sig-paren">(</span><em>**func_kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.orchestrator.execution_plugin.operations.run_script_locally" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="aria.orchestrator.execution_plugin.operations.run_script_with_ssh">
+<code class="descclassname">aria.orchestrator.execution_plugin.operations.</code><code class="descname">run_script_with_ssh</code><span class="sig-paren">(</span><em>**func_kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.orchestrator.execution_plugin.operations.run_script_with_ssh" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="aria.orchestrator.execution_plugin.ctx_proxy.html" class="btn btn-neutral float-right" title="aria.orchestrator.execution_plugin.ctx_proxy" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="aria.orchestrator.context.html" class="btn btn-neutral" title="aria.orchestrator.context" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2017, Apache Software Foundation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

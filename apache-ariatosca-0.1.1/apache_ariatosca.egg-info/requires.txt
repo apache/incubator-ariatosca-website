@@ -1,0 +1,32 @@
+requests>=2.3.0, <2.14.0
+networkx>=1.9, <1.10
+retrying>=1.3.0, <1.4.0
+blinker>1.3, <1.5
+jsonpickle>0.9.0, <=0.9.4
+ruamel.yaml>=0.11.12, <0.12.0
+Jinja2>=2.8, <2.9
+shortuuid>=0.5, <0.6
+CacheControl[filecache]>=0.11.0, <0.13
+clint>=0.5.0, <0.6
+SQLAlchemy>=1.1.0, <1.2
+wagon==0.6.0
+bottle>=0.12.0, <0.13
+setuptools>=35.0.0, <36.0.0
+click>=6.0, < 7.0
+colorama>=0.3.7, <=0.3.9
+PrettyTable>=0.7,<0.8
+click_didyoumean==0.0.3
+backports.shutil_get_terminal_size==1.0.0
+logutils==0.3.4.1
+psutil>=5.2.2, < 6.0.0
+
+[:python_version < '2.7']
+importlib
+ordereddict
+total-ordering
+
+[ssh]
+Fabric>=1.13.0, <1.14
+
+[ssh:sys_platform=="win32"]
+pypiwin32==219
