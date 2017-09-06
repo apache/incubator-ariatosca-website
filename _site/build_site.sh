@@ -23,6 +23,7 @@ tar -C $WORKDIR -xzf $WORKDIR/$DISTFILE apache-ariatosca-$ARIAVERSION/docs
 mkdir -p $WORKDIR/_site/docs
 mv $WORKDIR/apache-ariatosca-$ARIAVERSION/docs $WORKDIR/_site/
 rm -f $WORKDIR/$DISTFILE
+rm -Rf $WORKDIR/apache-ariatosca-$ARIAVERSION
 
 # Push
 git checkout asf-site

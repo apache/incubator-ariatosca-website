@@ -1,0 +1,555 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aria.orchestrator.context &mdash; ARIA TOSCA 0.1.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="ARIA TOSCA 0.1.1 documentation" href="index.html"/>
+        <link rel="next" title="aria.orchestrator.execution_plugin" href="aria.orchestrator.execution_plugin.html"/>
+        <link rel="prev" title="aria.orchestrator" href="aria.orchestrator.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> ARIA TOSCA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">CLI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rest.html">REST</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="aria.html"><code class="docutils literal"><span class="pre">aria</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.cli.html"><code class="docutils literal"><span class="pre">aria.cli</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.modeling.html"><code class="docutils literal"><span class="pre">aria.modeling</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.modeling.models.html"><code class="docutils literal"><span class="pre">aria.modeling.models</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.orchestrator.html"><code class="docutils literal"><span class="pre">aria.orchestrator</span></code></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="docutils literal"><span class="pre">aria.orchestrator.context</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-aria.orchestrator.context.common"><code class="docutils literal"><span class="pre">aria.orchestrator.context.common</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-aria.orchestrator.context.exceptions"><code class="docutils literal"><span class="pre">aria.orchestrator.context.exceptions</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-aria.orchestrator.context.operation"><code class="docutils literal"><span class="pre">aria.orchestrator.context.operation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-aria.orchestrator.context.toolbelt"><code class="docutils literal"><span class="pre">aria.orchestrator.context.toolbelt</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-aria.orchestrator.context.workflow"><code class="docutils literal"><span class="pre">aria.orchestrator.context.workflow</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aria.orchestrator.execution_plugin.html"><code class="docutils literal"><span class="pre">aria.orchestrator.execution_plugin</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.orchestrator.execution_plugin.ctx_proxy.html"><code class="docutils literal"><span class="pre">aria.orchestrator.execution_plugin.ctx_proxy</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.orchestrator.execution_plugin.ssh.html"><code class="docutils literal"><span class="pre">aria.orchestrator.execution_plugin.ssh</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.orchestrator.workflows.html"><code class="docutils literal"><span class="pre">aria.orchestrator.workflows</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.orchestrator.workflows.api.html"><code class="docutils literal"><span class="pre">aria.orchestrator.workflows.api</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.orchestrator.workflows.builtin.html"><code class="docutils literal"><span class="pre">aria.orchestrator.workflows.builtin</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.orchestrator.workflows.executor.html"><code class="docutils literal"><span class="pre">aria.orchestrator.workflows.executor</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.parser.html"><code class="docutils literal"><span class="pre">aria.parser</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.parser.consumption.html"><code class="docutils literal"><span class="pre">aria.parser.consumption</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.parser.loading.html"><code class="docutils literal"><span class="pre">aria.parser.loading</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.parser.modeling.html"><code class="docutils literal"><span class="pre">aria.parser.modeling</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.parser.presentation.html"><code class="docutils literal"><span class="pre">aria.parser.presentation</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.parser.reading.html"><code class="docutils literal"><span class="pre">aria.parser.reading</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.parser.validation.html"><code class="docutils literal"><span class="pre">aria.parser.validation</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.storage.html"><code class="docutils literal"><span class="pre">aria.storage</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.utils.html"><code class="docutils literal"><span class="pre">aria.utils</span></code></a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aria_extension_tosca.simple_v1_0.html"><code class="docutils literal"><span class="pre">aria_extension_tosca.simple_v1_0</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria_extension_tosca.simple_v1_0.modeling.html"><code class="docutils literal"><span class="pre">aria_extension_tosca.simple_v1_0.modeling</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria_extension_tosca.simple_v1_0.presentation.html"><code class="docutils literal"><span class="pre">aria_extension_tosca.simple_v1_0.presentation</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria_extension_tosca.simple_nfv_v1_0.html"><code class="docutils literal"><span class="pre">aria_extension_tosca.simple_nfv_v1_0</span></code></a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ARIA TOSCA</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li><code class="docutils literal"><span class="pre">aria.orchestrator.context</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/aria.orchestrator.context.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-aria.orchestrator.context">
+<span id="aria-orchestrator-context"></span><h1><a class="reference internal" href="#module-aria.orchestrator.context" title="aria.orchestrator.context"><code class="xref py py-mod docutils literal"><span class="pre">aria.orchestrator.context</span></code></a><a class="headerlink" href="#module-aria.orchestrator.context" title="Permalink to this headline">¶</a></h1>
+<p>Contexts for workflows and operations.</p>
+<div class="section" id="module-aria.orchestrator.context.common">
+<span id="aria-orchestrator-context-common"></span><h2><a class="reference internal" href="#module-aria.orchestrator.context.common" title="aria.orchestrator.context.common"><code class="xref py py-mod docutils literal"><span class="pre">aria.orchestrator.context.common</span></code></a><a class="headerlink" href="#module-aria.orchestrator.context.common" title="Permalink to this headline">¶</a></h2>
+<p>Common code for contexts.</p>
+<dl class="class">
+<dt id="aria.orchestrator.context.common.BaseContext">
+<em class="property">class </em><code class="descclassname">aria.orchestrator.context.common.</code><code class="descname">BaseContext</code><span class="sig-paren">(</span><em>name</em>, <em>service_id</em>, <em>model_storage</em>, <em>resource_storage</em>, <em>execution_id</em>, <em>workdir=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.orchestrator.context.common.BaseContext" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2.7/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>Base class for contexts.</p>
+<dl class="class">
+<dt id="aria.orchestrator.context.common.BaseContext.PrefixedLogger">
+<em class="property">class </em><code class="descname">PrefixedLogger</code><span class="sig-paren">(</span><em>base_logger</em>, <em>task_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.orchestrator.context.common.BaseContext.PrefixedLogger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2.7/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aria.orchestrator.context.common.BaseContext.download_resource">
+<code class="descname">download_resource</code><span class="sig-paren">(</span><em>destination</em>, <em>path=None</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.orchestrator.context.common.BaseContext.download_resource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Download a service template resource from the storage resource API (“RAPI”).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aria.orchestrator.context.common.BaseContext.download_resource_and_render">
+<code class="descname">download_resource_and_render</code><span class="sig-paren">(</span><em>destination</em>, <em>path=None</em>, <em>variables=None</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.orchestrator.context.common.BaseContext.download_resource_and_render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Downloads a service template resource from the resource storage and renders its content as a
+Jinja template using the provided variables. <code class="docutils literal"><span class="pre">ctx</span></code> is available to the template without
+providing it explicitly.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aria.orchestrator.context.common.BaseContext.get_resource">
+<code class="descname">get_resource</code><span class="sig-paren">(</span><em>path=None</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.orchestrator.context.common.BaseContext.get_resource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads a service instance resource as string from the resource storage.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aria.orchestrator.context.common.BaseContext.get_resource_and_render">
+<code class="descname">get_resource_and_render</code><span class="sig-paren">(</span><em>path=None</em>, <em>variables=None</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.orchestrator.context.common.BaseContext.get_resource_and_render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads a service instance resource as string from the resource storage and renders it as a
+Jinja template using the provided variables. <code class="docutils literal"><span class="pre">ctx</span></code> is available to the template without
+providing it explicitly.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aria.orchestrator.context.common.BaseContext.id">
+<code class="descname">id</code><a class="headerlink" href="#aria.orchestrator.context.common.BaseContext.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Operation ID.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aria.orchestrator.context.common.BaseContext.logging_handlers">
+<code class="descname">logging_handlers</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwds</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.orchestrator.context.common.BaseContext.logging_handlers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aria.orchestrator.context.common.BaseContext.model">
+<code class="descname">model</code><a class="headerlink" href="#aria.orchestrator.context.common.BaseContext.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Storage model API (“MAPI”).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aria.orchestrator.context.common.BaseContext.name">
+<code class="descname">name</code><a class="headerlink" href="#aria.orchestrator.context.common.BaseContext.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Operation name.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aria.orchestrator.context.common.BaseContext.resource">
+<code class="descname">resource</code><a class="headerlink" href="#aria.orchestrator.context.common.BaseContext.resource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Storage resource API (“RAPI”).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aria.orchestrator.context.common.BaseContext.service">
+<code class="descname">service</code><a class="headerlink" href="#aria.orchestrator.context.common.BaseContext.service" title="Permalink to this definition">¶</a></dt>
+<dd><p>Service instance model.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aria.orchestrator.context.common.BaseContext.service_template">
+<code class="descname">service_template</code><a class="headerlink" href="#aria.orchestrator.context.common.BaseContext.service_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>Service template model.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-aria.orchestrator.context.exceptions">
+<span id="aria-orchestrator-context-exceptions"></span><h2><a class="reference internal" href="#module-aria.orchestrator.context.exceptions" title="aria.orchestrator.context.exceptions"><code class="xref py py-mod docutils literal"><span class="pre">aria.orchestrator.context.exceptions</span></code></a><a class="headerlink" href="#module-aria.orchestrator.context.exceptions" title="Permalink to this headline">¶</a></h2>
+<p>Context exceptions.</p>
+<dl class="exception">
+<dt id="aria.orchestrator.context.exceptions.ContextException">
+<em class="property">exception </em><code class="descclassname">aria.orchestrator.context.exceptions.</code><code class="descname">ContextException</code><a class="headerlink" href="#aria.orchestrator.context.exceptions.ContextException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="aria.orchestrator.html#aria.orchestrator.exceptions.OrchestratorError" title="aria.orchestrator.exceptions.OrchestratorError"><code class="xref py py-class docutils literal"><span class="pre">aria.orchestrator.exceptions.OrchestratorError</span></code></a></p>
+<p>Context based exception</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-aria.orchestrator.context.operation">
+<span id="aria-orchestrator-context-operation"></span><h2><a class="reference internal" href="#module-aria.orchestrator.context.operation" title="aria.orchestrator.context.operation"><code class="xref py py-mod docutils literal"><span class="pre">aria.orchestrator.context.operation</span></code></a><a class="headerlink" href="#module-aria.orchestrator.context.operation" title="Permalink to this headline">¶</a></h2>
+<p>Operation contexts.</p>
+<dl class="class">
+<dt id="aria.orchestrator.context.operation.BaseOperationContext">
+<em class="property">class </em><code class="descclassname">aria.orchestrator.context.operation.</code><code class="descname">BaseOperationContext</code><span class="sig-paren">(</span><em>task_id</em>, <em>actor_id</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.orchestrator.context.operation.BaseOperationContext" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aria.orchestrator.context.common.BaseContext" title="aria.orchestrator.context.common.BaseContext"><code class="xref py py-class docutils literal"><span class="pre">aria.orchestrator.context.common.BaseContext</span></code></a></p>
+<p>Base class for contexts used during operation creation and execution.</p>
+<dl class="method">
+<dt id="aria.orchestrator.context.operation.BaseOperationContext.close">
+<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aria.orchestrator.context.operation.BaseOperationContext.close" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="aria.orchestrator.context.operation.BaseOperationContext.instantiate_from_dict">
+<em class="property">classmethod </em><code class="descname">instantiate_from_dict</code><span class="sig-paren">(</span><em>model_storage=None</em>, <em>resource_storage=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.orchestrator.context.operation.BaseOperationContext.instantiate_from_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aria.orchestrator.context.operation.BaseOperationContext.persist_changes">
+<code class="descname">persist_changes</code><a class="headerlink" href="#aria.orchestrator.context.operation.BaseOperationContext.persist_changes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aria.orchestrator.context.operation.BaseOperationContext.plugin_workdir">
+<code class="descname">plugin_workdir</code><a class="headerlink" href="#aria.orchestrator.context.operation.BaseOperationContext.plugin_workdir" title="Permalink to this definition">¶</a></dt>
+<dd><p>A work directory that is unique to the plugin and the deployment id</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aria.orchestrator.context.operation.BaseOperationContext.serialization_dict">
+<code class="descname">serialization_dict</code><a class="headerlink" href="#aria.orchestrator.context.operation.BaseOperationContext.serialization_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aria.orchestrator.context.operation.BaseOperationContext.task">
+<code class="descname">task</code><a class="headerlink" href="#aria.orchestrator.context.operation.BaseOperationContext.task" title="Permalink to this definition">¶</a></dt>
+<dd><p>The task in the model storage
+:return: Task model</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="aria.orchestrator.context.operation.NodeOperationContext">
+<em class="property">class </em><code class="descclassname">aria.orchestrator.context.operation.</code><code class="descname">NodeOperationContext</code><span class="sig-paren">(</span><em>task_id</em>, <em>actor_id</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.orchestrator.context.operation.NodeOperationContext" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aria.orchestrator.context.operation.BaseOperationContext" title="aria.orchestrator.context.operation.BaseOperationContext"><code class="xref py py-class docutils literal"><span class="pre">aria.orchestrator.context.operation.BaseOperationContext</span></code></a></p>
+<p>Context for node operations.</p>
+<dl class="attribute">
+<dt id="aria.orchestrator.context.operation.NodeOperationContext.node">
+<code class="descname">node</code><a class="headerlink" href="#aria.orchestrator.context.operation.NodeOperationContext.node" title="Permalink to this definition">¶</a></dt>
+<dd><p>The node instance of the current operation
+:return:</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aria.orchestrator.context.operation.NodeOperationContext.node_template">
+<code class="descname">node_template</code><a class="headerlink" href="#aria.orchestrator.context.operation.NodeOperationContext.node_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>the node of the current operation
+:return:</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="aria.orchestrator.context.operation.RelationshipOperationContext">
+<em class="property">class </em><code class="descclassname">aria.orchestrator.context.operation.</code><code class="descname">RelationshipOperationContext</code><span class="sig-paren">(</span><em>task_id</em>, <em>actor_id</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.orchestrator.context.operation.RelationshipOperationContext" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aria.orchestrator.context.operation.BaseOperationContext" title="aria.orchestrator.context.operation.BaseOperationContext"><code class="xref py py-class docutils literal"><span class="pre">aria.orchestrator.context.operation.BaseOperationContext</span></code></a></p>
+<p>Context for relationship operations.</p>
+<dl class="attribute">
+<dt id="aria.orchestrator.context.operation.RelationshipOperationContext.relationship">
+<code class="descname">relationship</code><a class="headerlink" href="#aria.orchestrator.context.operation.RelationshipOperationContext.relationship" title="Permalink to this definition">¶</a></dt>
+<dd><p>The relationship instance of the current operation
+:return:</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aria.orchestrator.context.operation.RelationshipOperationContext.source_node">
+<code class="descname">source_node</code><a class="headerlink" href="#aria.orchestrator.context.operation.RelationshipOperationContext.source_node" title="Permalink to this definition">¶</a></dt>
+<dd><p>The source node instance
+:return:</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aria.orchestrator.context.operation.RelationshipOperationContext.source_node_template">
+<code class="descname">source_node_template</code><a class="headerlink" href="#aria.orchestrator.context.operation.RelationshipOperationContext.source_node_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>The source node
+:return:</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aria.orchestrator.context.operation.RelationshipOperationContext.target_node">
+<code class="descname">target_node</code><a class="headerlink" href="#aria.orchestrator.context.operation.RelationshipOperationContext.target_node" title="Permalink to this definition">¶</a></dt>
+<dd><p>The target node instance
+:return:</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aria.orchestrator.context.operation.RelationshipOperationContext.target_node_template">
+<code class="descname">target_node_template</code><a class="headerlink" href="#aria.orchestrator.context.operation.RelationshipOperationContext.target_node_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>The target node
+:return:</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-aria.orchestrator.context.toolbelt">
+<span id="aria-orchestrator-context-toolbelt"></span><h2><a class="reference internal" href="#module-aria.orchestrator.context.toolbelt" title="aria.orchestrator.context.toolbelt"><code class="xref py py-mod docutils literal"><span class="pre">aria.orchestrator.context.toolbelt</span></code></a><a class="headerlink" href="#module-aria.orchestrator.context.toolbelt" title="Permalink to this headline">¶</a></h2>
+<p>Tools for operations.</p>
+<dl class="class">
+<dt id="aria.orchestrator.context.toolbelt.NodeToolBelt">
+<em class="property">class </em><code class="descclassname">aria.orchestrator.context.toolbelt.</code><code class="descname">NodeToolBelt</code><span class="sig-paren">(</span><em>operation_context</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.orchestrator.context.toolbelt.NodeToolBelt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2.7/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>Node operation tool belt.</p>
+<dl class="attribute">
+<dt id="aria.orchestrator.context.toolbelt.NodeToolBelt.host_ip">
+<code class="descname">host_ip</code><a class="headerlink" href="#aria.orchestrator.context.toolbelt.NodeToolBelt.host_ip" title="Permalink to this definition">¶</a></dt>
+<dd><p>The host ip of the current node
+:return:</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="aria.orchestrator.context.toolbelt.RelationshipToolBelt">
+<em class="property">class </em><code class="descclassname">aria.orchestrator.context.toolbelt.</code><code class="descname">RelationshipToolBelt</code><span class="sig-paren">(</span><em>operation_context</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.orchestrator.context.toolbelt.RelationshipToolBelt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2.7/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>Relationship operation tool belt.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aria.orchestrator.context.toolbelt.toolbelt">
+<code class="descclassname">aria.orchestrator.context.toolbelt.</code><code class="descname">toolbelt</code><span class="sig-paren">(</span><em>operation_context</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.orchestrator.context.toolbelt.toolbelt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a toolbelt from to the current operation executor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>operation_context</strong> – </td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-aria.orchestrator.context.workflow">
+<span id="aria-orchestrator-context-workflow"></span><h2><a class="reference internal" href="#module-aria.orchestrator.context.workflow" title="aria.orchestrator.context.workflow"><code class="xref py py-mod docutils literal"><span class="pre">aria.orchestrator.context.workflow</span></code></a><a class="headerlink" href="#module-aria.orchestrator.context.workflow" title="Permalink to this headline">¶</a></h2>
+<p>Workflow context.</p>
+<dl class="class">
+<dt id="aria.orchestrator.context.workflow.WorkflowContext">
+<em class="property">class </em><code class="descclassname">aria.orchestrator.context.workflow.</code><code class="descname">WorkflowContext</code><span class="sig-paren">(</span><em>workflow_name</em>, <em>parameters=None</em>, <em>task_max_attempts=1</em>, <em>task_retry_interval=0</em>, <em>task_ignore_failure=False</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.orchestrator.context.workflow.WorkflowContext" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aria.orchestrator.context.common.BaseContext" title="aria.orchestrator.context.common.BaseContext"><code class="xref py py-class docutils literal"><span class="pre">aria.orchestrator.context.common.BaseContext</span></code></a></p>
+<p>Context used during workflow creation and execution.</p>
+<dl class="attribute">
+<dt id="aria.orchestrator.context.workflow.WorkflowContext.execution">
+<code class="descname">execution</code><a class="headerlink" href="#aria.orchestrator.context.workflow.WorkflowContext.execution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Execution model.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aria.orchestrator.context.workflow.WorkflowContext.node_templates">
+<code class="descname">node_templates</code><a class="headerlink" href="#aria.orchestrator.context.workflow.WorkflowContext.node_templates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterates over nodes templates.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aria.orchestrator.context.workflow.WorkflowContext.nodes">
+<code class="descname">nodes</code><a class="headerlink" href="#aria.orchestrator.context.workflow.WorkflowContext.nodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterates over nodes.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aria.orchestrator.context.workflow.WorkflowContext.persist_changes">
+<code class="descname">persist_changes</code><a class="headerlink" href="#aria.orchestrator.context.workflow.WorkflowContext.persist_changes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aria.orchestrator.context.workflow.WorkflowContext.workflow_name">
+<code class="descname">workflow_name</code><a class="headerlink" href="#aria.orchestrator.context.workflow.WorkflowContext.workflow_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="aria.orchestrator.execution_plugin.html" class="btn btn-neutral float-right" title="aria.orchestrator.execution_plugin" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="aria.orchestrator.html" class="btn btn-neutral" title="aria.orchestrator" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2017, Apache Software Foundation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
