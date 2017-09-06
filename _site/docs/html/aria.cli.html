@@ -1,0 +1,889 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aria.cli &mdash; ARIA TOSCA 0.1.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="ARIA TOSCA 0.1.1 documentation" href="index.html"/>
+        <link rel="next" title="aria.modeling" href="aria.modeling.html"/>
+        <link rel="prev" title="aria" href="aria.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> ARIA TOSCA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">CLI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rest.html">REST</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="aria.html"><code class="docutils literal"><span class="pre">aria</span></code></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="docutils literal"><span class="pre">aria.cli</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-aria.cli.color"><code class="docutils literal"><span class="pre">aria.cli.color</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-aria.cli.csar"><code class="docutils literal"><span class="pre">aria.cli.csar</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-aria.cli.defaults"><code class="docutils literal"><span class="pre">aria.cli.defaults</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-aria.cli.exceptions"><code class="docutils literal"><span class="pre">aria.cli.exceptions</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-aria.cli.execution_logging"><code class="docutils literal"><span class="pre">aria.cli.execution_logging</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-aria.cli.helptexts"><code class="docutils literal"><span class="pre">aria.cli.helptexts</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-aria.cli.inputs"><code class="docutils literal"><span class="pre">aria.cli.inputs</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-aria.cli.logger"><code class="docutils literal"><span class="pre">aria.cli.logger</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-aria.cli.main"><code class="docutils literal"><span class="pre">aria.cli.main</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-aria.cli.service_template_utils"><code class="docutils literal"><span class="pre">aria.cli.service_template_utils</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-aria.cli.table"><code class="docutils literal"><span class="pre">aria.cli.table</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-aria.cli.utils"><code class="docutils literal"><span class="pre">aria.cli.utils</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-aria.cli.config"><code class="docutils literal"><span class="pre">aria.cli.config</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-aria.cli.config.config"><code class="docutils literal"><span class="pre">aria.cli.config.config</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-aria.cli.core"><code class="docutils literal"><span class="pre">aria.cli.core</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-aria.cli.core.aria"><code class="docutils literal"><span class="pre">aria.cli.core.aria</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aria.modeling.html"><code class="docutils literal"><span class="pre">aria.modeling</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.modeling.models.html"><code class="docutils literal"><span class="pre">aria.modeling.models</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.orchestrator.html"><code class="docutils literal"><span class="pre">aria.orchestrator</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.orchestrator.context.html"><code class="docutils literal"><span class="pre">aria.orchestrator.context</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.orchestrator.execution_plugin.html"><code class="docutils literal"><span class="pre">aria.orchestrator.execution_plugin</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.orchestrator.execution_plugin.ctx_proxy.html"><code class="docutils literal"><span class="pre">aria.orchestrator.execution_plugin.ctx_proxy</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.orchestrator.execution_plugin.ssh.html"><code class="docutils literal"><span class="pre">aria.orchestrator.execution_plugin.ssh</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.orchestrator.workflows.html"><code class="docutils literal"><span class="pre">aria.orchestrator.workflows</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.orchestrator.workflows.api.html"><code class="docutils literal"><span class="pre">aria.orchestrator.workflows.api</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.orchestrator.workflows.builtin.html"><code class="docutils literal"><span class="pre">aria.orchestrator.workflows.builtin</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.orchestrator.workflows.executor.html"><code class="docutils literal"><span class="pre">aria.orchestrator.workflows.executor</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.parser.html"><code class="docutils literal"><span class="pre">aria.parser</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.parser.consumption.html"><code class="docutils literal"><span class="pre">aria.parser.consumption</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.parser.loading.html"><code class="docutils literal"><span class="pre">aria.parser.loading</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.parser.modeling.html"><code class="docutils literal"><span class="pre">aria.parser.modeling</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.parser.presentation.html"><code class="docutils literal"><span class="pre">aria.parser.presentation</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.parser.reading.html"><code class="docutils literal"><span class="pre">aria.parser.reading</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.parser.validation.html"><code class="docutils literal"><span class="pre">aria.parser.validation</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.storage.html"><code class="docutils literal"><span class="pre">aria.storage</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria.utils.html"><code class="docutils literal"><span class="pre">aria.utils</span></code></a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aria_extension_tosca.simple_v1_0.html"><code class="docutils literal"><span class="pre">aria_extension_tosca.simple_v1_0</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria_extension_tosca.simple_v1_0.modeling.html"><code class="docutils literal"><span class="pre">aria_extension_tosca.simple_v1_0.modeling</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria_extension_tosca.simple_v1_0.presentation.html"><code class="docutils literal"><span class="pre">aria_extension_tosca.simple_v1_0.presentation</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="aria_extension_tosca.simple_nfv_v1_0.html"><code class="docutils literal"><span class="pre">aria_extension_tosca.simple_nfv_v1_0</span></code></a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ARIA TOSCA</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li><code class="docutils literal"><span class="pre">aria.cli</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/aria.cli.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-aria.cli">
+<span id="aria-cli"></span><h1><a class="reference internal" href="#module-aria.cli" title="aria.cli"><code class="xref py py-mod docutils literal"><span class="pre">aria.cli</span></code></a><a class="headerlink" href="#module-aria.cli" title="Permalink to this headline">¶</a></h1>
+<p>CLI package.</p>
+<div class="section" id="module-aria.cli.color">
+<span id="aria-cli-color"></span><h2><a class="reference internal" href="#module-aria.cli.color" title="aria.cli.color"><code class="xref py py-mod docutils literal"><span class="pre">aria.cli.color</span></code></a><a class="headerlink" href="#module-aria.cli.color" title="Permalink to this headline">¶</a></h2>
+<p>Terminal colorization utilities.</p>
+<dl class="class">
+<dt id="aria.cli.color.ColorSpec">
+<em class="property">class </em><code class="descclassname">aria.cli.color.</code><code class="descname">ColorSpec</code><span class="sig-paren">(</span><em>fore=None</em>, <em>back=None</em>, <em>style=None</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.color.ColorSpec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2.7/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>It is possible to provide fore, back and style arguments. each could be either
+the color is lower case letter, or the actual color from Colorama.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="aria.cli.color.Colors">
+<em class="property">class </em><code class="descclassname">aria.cli.color.</code><code class="descname">Colors</code><a class="headerlink" href="#aria.cli.color.Colors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2.7/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<dl class="attribute">
+<dt id="aria.cli.color.Colors.Back">
+<code class="descname">Back</code><em class="property"> = &lt;colorama.ansi.AnsiBack object&gt;</em><a class="headerlink" href="#aria.cli.color.Colors.Back" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aria.cli.color.Colors.Fore">
+<code class="descname">Fore</code><em class="property"> = &lt;colorama.ansi.AnsiFore object&gt;</em><a class="headerlink" href="#aria.cli.color.Colors.Fore" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aria.cli.color.Colors.Style">
+<code class="descname">Style</code><em class="property"> = &lt;colorama.ansi.AnsiStyle object&gt;</em><a class="headerlink" href="#aria.cli.color.Colors.Style" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="aria.cli.color.StringStylizer">
+<em class="property">class </em><code class="descclassname">aria.cli.color.</code><code class="descname">StringStylizer</code><span class="sig-paren">(</span><em>str_</em>, <em>color_spec=None</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.color.StringStylizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2.7/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<dl class="method">
+<dt id="aria.cli.color.StringStylizer.color">
+<code class="descname">color</code><span class="sig-paren">(</span><em>color_spec</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.color.StringStylizer.color" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aria.cli.color.StringStylizer.format">
+<code class="descname">format</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.color.StringStylizer.format" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aria.cli.color.StringStylizer.highlight">
+<code class="descname">highlight</code><span class="sig-paren">(</span><em>pattern</em>, <em>schema</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.color.StringStylizer.highlight" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aria.cli.color.StringStylizer.replace">
+<code class="descname">replace</code><span class="sig-paren">(</span><em>old</em>, <em>new</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.color.StringStylizer.replace" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-aria.cli.csar">
+<span id="aria-cli-csar"></span><h2><a class="reference internal" href="#module-aria.cli.csar" title="aria.cli.csar"><code class="xref py py-mod docutils literal"><span class="pre">aria.cli.csar</span></code></a><a class="headerlink" href="#module-aria.cli.csar" title="Permalink to this headline">¶</a></h2>
+<p>Support for the CSAR (Cloud Service ARchive) packaging specification.</p>
+<p>See the <a class="reference external" href="http://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.0/cos01/TOSCA-Simple-Profile-YAML-v1.0-cos01.html#_Toc461787381">TOSCA Simple Profile v1.0 cos01 specification</a></p>
+<dl class="function">
+<dt id="aria.cli.csar.is_csar_archive">
+<code class="descclassname">aria.cli.csar.</code><code class="descname">is_csar_archive</code><span class="sig-paren">(</span><em>source</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.csar.is_csar_archive" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="aria.cli.csar.read">
+<code class="descclassname">aria.cli.csar.</code><code class="descname">read</code><span class="sig-paren">(</span><em>source</em>, <em>destination=None</em>, <em>logger=None</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.csar.read" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="aria.cli.csar.write">
+<code class="descclassname">aria.cli.csar.</code><code class="descname">write</code><span class="sig-paren">(</span><em>service_template_path</em>, <em>destination</em>, <em>logger</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.csar.write" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-aria.cli.defaults">
+<span id="aria-cli-defaults"></span><h2><a class="reference internal" href="#module-aria.cli.defaults" title="aria.cli.defaults"><code class="xref py py-mod docutils literal"><span class="pre">aria.cli.defaults</span></code></a><a class="headerlink" href="#module-aria.cli.defaults" title="Permalink to this headline">¶</a></h2>
+<p>Various CLI default values.</p>
+<dl class="data">
+<dt id="aria.cli.defaults.SERVICE_TEMPLATE_FILENAME">
+<code class="descclassname">aria.cli.defaults.</code><code class="descname">SERVICE_TEMPLATE_FILENAME</code><em class="property"> = 'service_template.yaml'</em><a class="headerlink" href="#aria.cli.defaults.SERVICE_TEMPLATE_FILENAME" title="Permalink to this definition">¶</a></dt>
+<dd><p>Default service template filename</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="aria.cli.defaults.SORT_DESCENDING">
+<code class="descclassname">aria.cli.defaults.</code><code class="descname">SORT_DESCENDING</code><em class="property"> = False</em><a class="headerlink" href="#aria.cli.defaults.SORT_DESCENDING" title="Permalink to this definition">¶</a></dt>
+<dd><p>Default sort descending</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="aria.cli.defaults.TASK_MAX_ATTEMPTS">
+<code class="descclassname">aria.cli.defaults.</code><code class="descname">TASK_MAX_ATTEMPTS</code><em class="property"> = 30</em><a class="headerlink" href="#aria.cli.defaults.TASK_MAX_ATTEMPTS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Default task max attempts</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="aria.cli.defaults.TASK_RETRY_INTERVAL">
+<code class="descclassname">aria.cli.defaults.</code><code class="descname">TASK_RETRY_INTERVAL</code><em class="property"> = 30</em><a class="headerlink" href="#aria.cli.defaults.TASK_RETRY_INTERVAL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Default task retry interval</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-aria.cli.exceptions">
+<span id="aria-cli-exceptions"></span><h2><a class="reference internal" href="#module-aria.cli.exceptions" title="aria.cli.exceptions"><code class="xref py py-mod docutils literal"><span class="pre">aria.cli.exceptions</span></code></a><a class="headerlink" href="#module-aria.cli.exceptions" title="Permalink to this headline">¶</a></h2>
+<p>CLI exceptions.</p>
+<dl class="exception">
+<dt id="aria.cli.exceptions.AriaCliError">
+<em class="property">exception </em><code class="descclassname">aria.cli.exceptions.</code><code class="descname">AriaCliError</code><a class="headerlink" href="#aria.cli.exceptions.AriaCliError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="aria.html#aria.exceptions.AriaError" title="aria.exceptions.AriaError"><code class="xref py py-class docutils literal"><span class="pre">aria.exceptions.AriaError</span></code></a></p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-aria.cli.execution_logging">
+<span id="aria-cli-execution-logging"></span><h2><a class="reference internal" href="#module-aria.cli.execution_logging" title="aria.cli.execution_logging"><code class="xref py py-mod docutils literal"><span class="pre">aria.cli.execution_logging</span></code></a><a class="headerlink" href="#module-aria.cli.execution_logging" title="Permalink to this headline">¶</a></h2>
+<p>Formatting for <code class="docutils literal"><span class="pre">executions</span></code> sub-commands.</p>
+<dl class="function">
+<dt id="aria.cli.execution_logging.log">
+<code class="descclassname">aria.cli.execution_logging.</code><code class="descname">log</code><span class="sig-paren">(</span><em>item</em>, <em>mark_pattern=None</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.execution_logging.log" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="aria.cli.execution_logging.log_list">
+<code class="descclassname">aria.cli.execution_logging.</code><code class="descname">log_list</code><span class="sig-paren">(</span><em>iterator</em>, <em>mark_pattern=None</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.execution_logging.log_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="aria.cli.execution_logging.stylize_log">
+<code class="descclassname">aria.cli.execution_logging.</code><code class="descname">stylize_log</code><span class="sig-paren">(</span><em>item</em>, <em>mark_pattern</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.execution_logging.stylize_log" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-aria.cli.helptexts">
+<span id="aria-cli-helptexts"></span><h2><a class="reference internal" href="#module-aria.cli.helptexts" title="aria.cli.helptexts"><code class="xref py py-mod docutils literal"><span class="pre">aria.cli.helptexts</span></code></a><a class="headerlink" href="#module-aria.cli.helptexts" title="Permalink to this headline">¶</a></h2>
+<p>Gathers all CLI command help texts in one place.</p>
+</div>
+<div class="section" id="module-aria.cli.inputs">
+<span id="aria-cli-inputs"></span><h2><a class="reference internal" href="#module-aria.cli.inputs" title="aria.cli.inputs"><code class="xref py py-mod docutils literal"><span class="pre">aria.cli.inputs</span></code></a><a class="headerlink" href="#module-aria.cli.inputs" title="Permalink to this headline">¶</a></h2>
+<p>Helpers for validating and coercing service template inputs.</p>
+<dl class="function">
+<dt id="aria.cli.inputs.inputs_to_dict">
+<code class="descclassname">aria.cli.inputs.</code><code class="descname">inputs_to_dict</code><span class="sig-paren">(</span><em>resources</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.inputs.inputs_to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dictionary of inputs</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>resources</strong> – <p>can be:</p>
+<ul class="simple">
+<li>list of files</li>
+<li>single file</li>
+<li>directory containing multiple input files</li>
+<li><code class="docutils literal"><span class="pre">key1=value1;key2=value2</span></code> pairs string.</li>
+<li>string formatted as JSON/YAML</li>
+<li>wildcard based string (e.g. <code class="docutils literal"><span class="pre">*-inputs.yaml</span></code>)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-aria.cli.logger">
+<span id="aria-cli-logger"></span><h2><a class="reference internal" href="#module-aria.cli.logger" title="aria.cli.logger"><code class="xref py py-mod docutils literal"><span class="pre">aria.cli.logger</span></code></a><a class="headerlink" href="#module-aria.cli.logger" title="Permalink to this headline">¶</a></h2>
+<p>Centralized logging configuration and formatting.</p>
+<dl class="class">
+<dt id="aria.cli.logger.Logging">
+<em class="property">class </em><code class="descclassname">aria.cli.logger.</code><code class="descname">Logging</code><span class="sig-paren">(</span><em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.logger.Logging" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2.7/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<dl class="method">
+<dt id="aria.cli.logger.Logging.is_high_verbose_level">
+<code class="descname">is_high_verbose_level</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.logger.Logging.is_high_verbose_level" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aria.cli.logger.Logging.log_file">
+<code class="descname">log_file</code><a class="headerlink" href="#aria.cli.logger.Logging.log_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aria.cli.logger.Logging.logger">
+<code class="descname">logger</code><a class="headerlink" href="#aria.cli.logger.Logging.logger" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aria.cli.logger.Logging.verbosity_level">
+<code class="descname">verbosity_level</code><a class="headerlink" href="#aria.cli.logger.Logging.verbosity_level" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="aria.cli.logger.ModelLogIterator">
+<em class="property">class </em><code class="descclassname">aria.cli.logger.</code><code class="descname">ModelLogIterator</code><span class="sig-paren">(</span><em>model_storage</em>, <em>execution_id</em>, <em>filters=None</em>, <em>sort=None</em>, <em>offset=0</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.logger.ModelLogIterator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2.7/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-aria.cli.main">
+<span id="aria-cli-main"></span><h2><a class="reference internal" href="#module-aria.cli.main" title="aria.cli.main"><code class="xref py py-mod docutils literal"><span class="pre">aria.cli.main</span></code></a><a class="headerlink" href="#module-aria.cli.main" title="Permalink to this headline">¶</a></h2>
+<p>Executable entry point into the CLI.</p>
+<dl class="function">
+<dt id="aria.cli.main.main">
+<code class="descclassname">aria.cli.main.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.main.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-aria.cli.service_template_utils">
+<span id="aria-cli-service-template-utils"></span><h2><a class="reference internal" href="#module-aria.cli.service_template_utils" title="aria.cli.service_template_utils"><code class="xref py py-mod docutils literal"><span class="pre">aria.cli.service_template_utils</span></code></a><a class="headerlink" href="#module-aria.cli.service_template_utils" title="Permalink to this headline">¶</a></h2>
+<p>Loading mechanism for service templates.</p>
+<dl class="function">
+<dt id="aria.cli.service_template_utils.get">
+<code class="descclassname">aria.cli.service_template_utils.</code><code class="descname">get</code><span class="sig-paren">(</span><em>source</em>, <em>service_template_filename</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.service_template_utils.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a source and return a path to the main service template file</p>
+<p>The behavior based on then source argument content is:</p>
+<ul class="simple">
+<li>local <code class="docutils literal"><span class="pre">.yaml</span></code> file: return the file</li>
+<li>local archive (<code class="docutils literal"><span class="pre">.csar</span></code>, <code class="docutils literal"><span class="pre">.zip</span></code>, <code class="docutils literal"><span class="pre">.tar</span></code>, <code class="docutils literal"><span class="pre">.tar.gz</span></code>, and <code class="docutils literal"><span class="pre">.tar.bz2</span></code>): extract it
+locally and return path service template file</li>
+<li>URL: download and get service template from downloaded archive</li>
+<li>GitHub repo: download and get service template from downloaded archive</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>source</strong> (<a class="reference external" href="https://docs.python.org/2.7/library/functions.html#basestring" title="(in Python v2.7)"><em>basestring</em></a>) – path/URL/GitHub repo to archive/service-template file</li>
+<li><strong>service_template_filename</strong> (<a class="reference external" href="https://docs.python.org/2.7/library/functions.html#basestring" title="(in Python v2.7)"><em>basestring</em></a>) – path to service template if source is a non-CSAR archive
+with CSAR archives, this is read from the metadata file)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">path to main service template file</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2.7/library/functions.html#basestring" title="(in Python v2.7)">basestring</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-aria.cli.table">
+<span id="aria-cli-table"></span><h2><a class="reference internal" href="#module-aria.cli.table" title="aria.cli.table"><code class="xref py py-mod docutils literal"><span class="pre">aria.cli.table</span></code></a><a class="headerlink" href="#module-aria.cli.table" title="Permalink to this headline">¶</a></h2>
+<p>Tabular formatting utilities.</p>
+<dl class="function">
+<dt id="aria.cli.table.print_data">
+<code class="descclassname">aria.cli.table.</code><code class="descname">print_data</code><span class="sig-paren">(</span><em>columns</em>, <em>items</em>, <em>header_text</em>, <em>column_formatters=None</em>, <em>col_max_width=None</em>, <em>defaults=None</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.table.print_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints data in a tabular form.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>columns</strong> (<em>iterable of basestring</em>) – columns of the table, e.g. <code class="docutils literal"><span class="pre">['id','name']</span></code></li>
+<li><strong>items</strong> – each element must have keys or attributes corresponding to the <code class="docutils literal"><span class="pre">columns</span></code> items,
+e.g. <code class="docutils literal"><span class="pre">[{'id':'123',</span> <span class="pre">'name':'Pete'}]</span></code></li>
+<li><strong>column_formatters</strong> ({<a class="reference external" href="https://docs.python.org/2.7/library/functions.html#basestring" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">basestring</span></code></a>: <code class="xref py py-obj docutils literal"><span class="pre">function</span></code>}) – maps column name to formatter, a function that may manipulate the
+string values printed for this column, e.g. <code class="docutils literal"><span class="pre">{'created_at':</span> <span class="pre">timestamp_formatter}</span></code></li>
+<li><strong>col_max_width</strong> (<a class="reference external" href="https://docs.python.org/2.7/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) – maximum width of table</li>
+<li><strong>defaults</strong> ({<a class="reference external" href="https://docs.python.org/2.7/library/functions.html#basestring" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">basestring</span></code></a>: <a class="reference external" href="https://docs.python.org/2.7/library/functions.html#basestring" title="(in Python v2.7)"><code class="xref py py-obj docutils literal"><span class="pre">basestring</span></code></a>}) – default values for keys that don’t exist in the data itself, e.g.
+<code class="docutils literal"><span class="pre">{'serviceId':'123'}</span></code></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="aria.cli.table.timestamp_formatter">
+<code class="descclassname">aria.cli.table.</code><code class="descname">timestamp_formatter</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.table.timestamp_formatter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="aria.cli.table.trim_formatter_generator">
+<code class="descclassname">aria.cli.table.</code><code class="descname">trim_formatter_generator</code><span class="sig-paren">(</span><em>max_length</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.table.trim_formatter_generator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-aria.cli.utils">
+<span id="aria-cli-utils"></span><h2><a class="reference internal" href="#module-aria.cli.utils" title="aria.cli.utils"><code class="xref py py-mod docutils literal"><span class="pre">aria.cli.utils</span></code></a><a class="headerlink" href="#module-aria.cli.utils" title="Permalink to this headline">¶</a></h2>
+<p>Miscellaneous CLI utilities.</p>
+<dl class="function">
+<dt id="aria.cli.utils.check_overriding_storage_exceptions">
+<code class="descclassname">aria.cli.utils.</code><code class="descname">check_overriding_storage_exceptions</code><span class="sig-paren">(</span><em>e</em>, <em>model_class</em>, <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.utils.check_overriding_storage_exceptions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks whether the storage exception is a known type where we’d like to override the exception
+message; If so, it raises a new error. Otherwise it simply returns.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aria.cli.utils.download_file">
+<code class="descclassname">aria.cli.utils.</code><code class="descname">download_file</code><span class="sig-paren">(</span><em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.utils.download_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="aria.cli.utils.generate_progress_handler">
+<code class="descclassname">aria.cli.utils.</code><code class="descname">generate_progress_handler</code><span class="sig-paren">(</span><em>file_path</em>, <em>action=''</em>, <em>max_bar_length=80</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.utils.generate_progress_handler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a function that prints a progress bar in the terminal.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>file_path</strong> – the name of the file being transferred</li>
+<li><strong>action</strong> – uploading/downloading</li>
+<li><strong>max_bar_length</strong> – maximum allowed length of the bar</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">configured <code class="docutils literal"><span class="pre">print_progress</span></code> function</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="aria.cli.utils.get_parameter_templates_as_string">
+<code class="descclassname">aria.cli.utils.</code><code class="descname">get_parameter_templates_as_string</code><span class="sig-paren">(</span><em>parameter_templates</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.utils.get_parameter_templates_as_string" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="aria.cli.utils.storage_sort_param">
+<code class="descclassname">aria.cli.utils.</code><code class="descname">storage_sort_param</code><span class="sig-paren">(</span><em>sort_by</em>, <em>descending</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.utils.storage_sort_param" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-aria.cli.config">
+<span id="aria-cli-config"></span><h2><a class="reference internal" href="#module-aria.cli.config" title="aria.cli.config"><code class="xref py py-mod docutils literal"><span class="pre">aria.cli.config</span></code></a><a class="headerlink" href="#module-aria.cli.config" title="Permalink to this headline">¶</a></h2>
+<p>CLI configuration package.</p>
+</div>
+<div class="section" id="module-aria.cli.config.config">
+<span id="aria-cli-config-config"></span><h2><a class="reference internal" href="#module-aria.cli.config.config" title="aria.cli.config.config"><code class="xref py py-mod docutils literal"><span class="pre">aria.cli.config.config</span></code></a><a class="headerlink" href="#module-aria.cli.config.config" title="Permalink to this headline">¶</a></h2>
+<p>CLI configuration mechanism.</p>
+<dl class="class">
+<dt id="aria.cli.config.config.CliConfig">
+<em class="property">class </em><code class="descclassname">aria.cli.config.config.</code><code class="descname">CliConfig</code><span class="sig-paren">(</span><em>config_path</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.config.config.CliConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2.7/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<dl class="class">
+<dt id="aria.cli.config.config.CliConfig.Logging">
+<em class="property">class </em><code class="descname">Logging</code><span class="sig-paren">(</span><em>logging</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.config.config.CliConfig.Logging" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2.7/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<dl class="class">
+<dt id="aria.cli.config.config.CliConfig.Logging.Execution">
+<em class="property">class </em><code class="descname">Execution</code><span class="sig-paren">(</span><em>execution_logging</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.config.config.CliConfig.Logging.Execution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2.7/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<dl class="attribute">
+<dt id="aria.cli.config.config.CliConfig.Logging.Execution.colors">
+<code class="descname">colors</code><a class="headerlink" href="#aria.cli.config.config.CliConfig.Logging.Execution.colors" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aria.cli.config.config.CliConfig.Logging.Execution.colors_enabled">
+<code class="descname">colors_enabled</code><a class="headerlink" href="#aria.cli.config.config.CliConfig.Logging.Execution.colors_enabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aria.cli.config.config.CliConfig.Logging.Execution.formats">
+<code class="descname">formats</code><a class="headerlink" href="#aria.cli.config.config.CliConfig.Logging.Execution.formats" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aria.cli.config.config.CliConfig.Logging.execution">
+<code class="descname">execution</code><a class="headerlink" href="#aria.cli.config.config.CliConfig.Logging.execution" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aria.cli.config.config.CliConfig.Logging.filename">
+<code class="descname">filename</code><a class="headerlink" href="#aria.cli.config.config.CliConfig.Logging.filename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aria.cli.config.config.CliConfig.Logging.loggers">
+<code class="descname">loggers</code><a class="headerlink" href="#aria.cli.config.config.CliConfig.Logging.loggers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="aria.cli.config.config.CliConfig.create_config">
+<em class="property">classmethod </em><code class="descname">create_config</code><span class="sig-paren">(</span><em>workdir</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.config.config.CliConfig.create_config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aria.cli.config.config.CliConfig.logging">
+<code class="descname">logging</code><a class="headerlink" href="#aria.cli.config.config.CliConfig.logging" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-aria.cli.core">
+<span id="aria-cli-core"></span><h2><a class="reference internal" href="#module-aria.cli.core" title="aria.cli.core"><code class="xref py py-mod docutils literal"><span class="pre">aria.cli.core</span></code></a><a class="headerlink" href="#module-aria.cli.core" title="Permalink to this headline">¶</a></h2>
+<p>CLI core package.</p>
+</div>
+<div class="section" id="module-aria.cli.core.aria">
+<span id="aria-cli-core-aria"></span><h2><a class="reference internal" href="#module-aria.cli.core.aria" title="aria.cli.core.aria"><code class="xref py py-mod docutils literal"><span class="pre">aria.cli.core.aria</span></code></a><a class="headerlink" href="#module-aria.cli.core.aria" title="Permalink to this headline">¶</a></h2>
+<p>Enhancements and ARIA-specific conveniences for <a class="reference external" href="http://click.pocoo.org">Click</a>.</p>
+<dl class="class">
+<dt id="aria.cli.core.aria.AliasedGroup">
+<em class="property">class </em><code class="descclassname">aria.cli.core.aria.</code><code class="descname">AliasedGroup</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.core.aria.AliasedGroup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">click.core.Group</span></code></p>
+<dl class="method">
+<dt id="aria.cli.core.aria.AliasedGroup.get_command">
+<code class="descname">get_command</code><span class="sig-paren">(</span><em>ctx</em>, <em>cmd_name</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.core.aria.AliasedGroup.get_command" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aria.cli.core.aria.AliasedGroup.resolve_command">
+<code class="descname">resolve_command</code><span class="sig-paren">(</span><em>ctx</em>, <em>args</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.core.aria.AliasedGroup.resolve_command" title="Permalink to this definition">¶</a></dt>
+<dd><p>Override clicks <code class="docutils literal"><span class="pre">resolve_command</span></code> method and appends <em>Did you mean …</em> suggestions to the
+raised exception message.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="aria.cli.core.aria.MutuallyExclusiveOption">
+<em class="property">class </em><code class="descclassname">aria.cli.core.aria.</code><code class="descname">MutuallyExclusiveOption</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.core.aria.MutuallyExclusiveOption" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">click.core.Option</span></code></p>
+<dl class="method">
+<dt id="aria.cli.core.aria.MutuallyExclusiveOption.handle_parse_result">
+<code class="descname">handle_parse_result</code><span class="sig-paren">(</span><em>ctx</em>, <em>opts</em>, <em>args</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.core.aria.MutuallyExclusiveOption.handle_parse_result" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="aria.cli.core.aria.Options">
+<em class="property">class </em><code class="descclassname">aria.cli.core.aria.</code><code class="descname">Options</code><a class="headerlink" href="#aria.cli.core.aria.Options" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2.7/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>The options API is nicer when you use each option by calling <code class="docutils literal"><span class="pre">&#64;aria.options.some_option</span></code>
+instead of <code class="docutils literal"><span class="pre">&#64;aria.some_option</span></code>.</p>
+<p>Note that some options are attributes and some are static methods. The reason for that is
+that we want to be explicit regarding how a developer sees an option. If it can receive
+arguments, it’s a method - if not, it’s an attribute.</p>
+<dl class="staticmethod">
+<dt id="aria.cli.core.aria.Options.execution_id">
+<em class="property">static </em><code class="descname">execution_id</code><span class="sig-paren">(</span><em>required=False</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.core.aria.Options.execution_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="aria.cli.core.aria.Options.force">
+<em class="property">static </em><code class="descname">force</code><span class="sig-paren">(</span><em>help</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.core.aria.Options.force" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="aria.cli.core.aria.Options.inputs">
+<em class="property">static </em><code class="descname">inputs</code><span class="sig-paren">(</span><em>help</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.core.aria.Options.inputs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="aria.cli.core.aria.Options.mark_pattern">
+<em class="property">static </em><code class="descname">mark_pattern</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.core.aria.Options.mark_pattern" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="aria.cli.core.aria.Options.service_id">
+<em class="property">static </em><code class="descname">service_id</code><span class="sig-paren">(</span><em>required=False</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.core.aria.Options.service_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="aria.cli.core.aria.Options.service_name">
+<em class="property">static </em><code class="descname">service_name</code><span class="sig-paren">(</span><em>required=False</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.core.aria.Options.service_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="aria.cli.core.aria.Options.service_template_id">
+<em class="property">static </em><code class="descname">service_template_id</code><span class="sig-paren">(</span><em>required=False</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.core.aria.Options.service_template_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="aria.cli.core.aria.Options.service_template_name">
+<em class="property">static </em><code class="descname">service_template_name</code><span class="sig-paren">(</span><em>required=False</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.core.aria.Options.service_template_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="aria.cli.core.aria.Options.service_template_path">
+<em class="property">static </em><code class="descname">service_template_path</code><span class="sig-paren">(</span><em>required=False</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.core.aria.Options.service_template_path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="aria.cli.core.aria.Options.sort_by">
+<em class="property">static </em><code class="descname">sort_by</code><span class="sig-paren">(</span><em>default='created_at'</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.core.aria.Options.sort_by" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="aria.cli.core.aria.Options.task_max_attempts">
+<em class="property">static </em><code class="descname">task_max_attempts</code><span class="sig-paren">(</span><em>default=30</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.core.aria.Options.task_max_attempts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="aria.cli.core.aria.Options.task_retry_interval">
+<em class="property">static </em><code class="descname">task_retry_interval</code><span class="sig-paren">(</span><em>default=30</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.core.aria.Options.task_retry_interval" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="aria.cli.core.aria.Options.verbose">
+<em class="property">static </em><code class="descname">verbose</code><span class="sig-paren">(</span><em>expose_value=False</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.core.aria.Options.verbose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="aria.cli.core.aria.argument">
+<code class="descclassname">aria.cli.core.aria.</code><code class="descname">argument</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.core.aria.argument" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make Click arguments specific to ARIA.</p>
+<p>This exists purely for aesthetic reasons, otherwise some decorators are called
+<code class="docutils literal"><span class="pre">&#64;click.something</span></code> instead of <code class="docutils literal"><span class="pre">&#64;aria.something</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aria.cli.core.aria.command">
+<code class="descclassname">aria.cli.core.aria.</code><code class="descname">command</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.core.aria.command" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make Click commands ARIA specific.</p>
+<p>This exists purely for aesthetic reasons, otherwise some decorators are called
+<code class="docutils literal"><span class="pre">&#64;click.something</span></code> instead of <code class="docutils literal"><span class="pre">&#64;aria.something</span></code>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aria.cli.core.aria.group">
+<code class="descclassname">aria.cli.core.aria.</code><code class="descname">group</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.core.aria.group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allow to create a group with a default click context and a class for Click’s <code class="docutils literal"><span class="pre">didyoueamn</span></code>
+without having to repeat it for every group.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aria.cli.core.aria.inputs_callback">
+<code class="descclassname">aria.cli.core.aria.</code><code class="descname">inputs_callback</code><span class="sig-paren">(</span><em>ctx</em>, <em>param</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.core.aria.inputs_callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allow to pass any inputs we provide to a command as processed inputs instead of having to call
+<code class="docutils literal"><span class="pre">inputs_to_dict</span></code> inside the command.</p>
+<p><code class="docutils literal"><span class="pre">&#64;aria.options.inputs</span></code> already calls this callback so that every time you use the option it
+returns the inputs as a dictionary.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aria.cli.core.aria.mutually_exclusive_option">
+<code class="descclassname">aria.cli.core.aria.</code><code class="descname">mutually_exclusive_option</code><span class="sig-paren">(</span><em>*param_decls</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.core.aria.mutually_exclusive_option" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator for mutually exclusive options.</p>
+<p>This decorator works similarly to <cite>click.option</cite>, but supports an extra <code class="docutils literal"><span class="pre">mutually_exclusive</span></code>
+argument, which is a list of argument names with which the option is mutually exclusive.</p>
+<p>You can optionally also supply <code class="docutils literal"><span class="pre">mutuality_description</span></code> and <code class="docutils literal"><span class="pre">mutuality_error</span></code> to override the
+default messages.</p>
+<p>NOTE: All mutually exclusive options must use this. It’s not enough to use it in just one of the
+options.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aria.cli.core.aria.pass_context">
+<code class="descclassname">aria.cli.core.aria.</code><code class="descname">pass_context</code><span class="sig-paren">(</span><em>func</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.core.aria.pass_context" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make click context ARIA specific.</p>
+<p>This exists purely for aesthetic reasons, otherwise some decorators are called
+<code class="docutils literal"><span class="pre">&#64;click.something</span></code> instead of <code class="docutils literal"><span class="pre">&#64;aria.something</span></code>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aria.cli.core.aria.pass_logger">
+<code class="descclassname">aria.cli.core.aria.</code><code class="descname">pass_logger</code><span class="sig-paren">(</span><em>func</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.core.aria.pass_logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simply passes the logger to a command.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aria.cli.core.aria.pass_model_storage">
+<code class="descclassname">aria.cli.core.aria.</code><code class="descname">pass_model_storage</code><span class="sig-paren">(</span><em>func</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.core.aria.pass_model_storage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simply passes the model storage to a command.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aria.cli.core.aria.pass_plugin_manager">
+<code class="descclassname">aria.cli.core.aria.</code><code class="descname">pass_plugin_manager</code><span class="sig-paren">(</span><em>func</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.core.aria.pass_plugin_manager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simply passes the plugin manager to a command.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aria.cli.core.aria.pass_resource_storage">
+<code class="descclassname">aria.cli.core.aria.</code><code class="descname">pass_resource_storage</code><span class="sig-paren">(</span><em>func</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.core.aria.pass_resource_storage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simply passes the resource storage to a command.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aria.cli.core.aria.set_cli_except_hook">
+<code class="descclassname">aria.cli.core.aria.</code><code class="descname">set_cli_except_hook</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.core.aria.set_cli_except_hook" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="aria.cli.core.aria.set_verbosity_level">
+<code class="descclassname">aria.cli.core.aria.</code><code class="descname">set_verbosity_level</code><span class="sig-paren">(</span><em>ctx</em>, <em>param</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.core.aria.set_verbosity_level" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="aria.cli.core.aria.show_version">
+<code class="descclassname">aria.cli.core.aria.</code><code class="descname">show_version</code><span class="sig-paren">(</span><em>ctx</em>, <em>param</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#aria.cli.core.aria.show_version" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="aria.modeling.html" class="btn btn-neutral float-right" title="aria.modeling" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="aria.html" class="btn btn-neutral" title="aria" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2017, Apache Software Foundation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
