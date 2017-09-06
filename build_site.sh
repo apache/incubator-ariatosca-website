@@ -17,12 +17,13 @@ ARIAVERSION=0.1.1
 DISTPATH=https://dist.apache.org/repos/dist/dev/incubator/ariatosca/$ARIAVERSION-incubating/sdist/apache-ariatosca-$ARIAVERSION.tar.gz
 DISTFILE=apache-ariatosca-$ARIAVERSION.tar.gz
 
-# Copy docs
+# Copy docs into _site
 wget -P $WORKDIR $DISTPATH
 tar -C $WORKDIR -xzf $WORKDIR/$DISTFILE apache-ariatosca-$ARIAVERSION/docs
 mkdir -p $WORKDIR/_site/docs
-mv $WORKDIR/apache-ariatosca-$ARIAVERSION/docs $WORKDIR/_site/docs
+mv $WORKDIR/apache-ariatosca-$ARIAVERSION/docs $WORKDIR/_site/
 rm -f $WORKDIR/$DISTFILE
+rm -Rf $WORKDIR/apache-ariatosca-$ARIAVERSION
 
 # Push
 git checkout asf-site
