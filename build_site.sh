@@ -21,7 +21,7 @@ DISTFILE=apache-ariatosca-$ARIAVERSION.tar.gz
 wget -P $WORKDIR $DISTPATH
 tar -C $WORKDIR -xzf $WORKDIR/$DISTFILE apache-ariatosca-$ARIAVERSION/docs
 mkdir -p $WORKDIR/_site/docs
-mv $WORKDIR/apache-ariatosca-$ARIAVERSION/docs $WORKDIR/_site/
+mv $WORKDIR/apache-ariatosca-$ARIAVERSION/docs $WORKDIR/
 rm -f $WORKDIR/$DISTFILE
 
 git checkout asf-site
