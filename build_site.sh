@@ -16,14 +16,12 @@ bundle exec jekyll build --destination $WORKDIR
 ARIAVERSION=0.1.1
 DISTPATH=https://dist.apache.org/repos/dist/dev/incubator/ariatosca/$ARIAVERSION-incubating/sdist/apache-ariatosca-$ARIAVERSION.tar.gz
 DISTFILE=apache-ariatosca-$ARIAVERSION.tar.gz
-
 # Copy docs into _site
 wget -P $WORKDIR $DISTPATH
 tar -C $WORKDIR -xzf $WORKDIR/$DISTFILE apache-ariatosca-$ARIAVERSION/docs
 mkdir -p $WORKDIR/_site/docs
 mv $WORKDIR/apache-ariatosca-$ARIAVERSION/docs $WORKDIR/
 rm -f $WORKDIR/$DISTFILE
-
 git checkout asf-site
 git clean -f -d
 git pull origin asf-site
