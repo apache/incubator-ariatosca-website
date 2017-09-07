@@ -8,10 +8,13 @@
   url: /community/
   excerpt: "Joing the ARIA TOSCA Community"
 
-
 - title: Getting Started
   url: /getting-started/
   excerpt: "Getting started with ARIA TOSCA"
+
+- title: Docs
+  url: http://ariatosca.incubator.apache.org/docs/html/index.html
+  excerpt: "Apache ARIA TOSCA Documentation"
 
 - title: Roadmap
   url: /roadmap/

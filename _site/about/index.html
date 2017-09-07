@@ -14,38 +14,36 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/css/owl.carousel.css">
-  <link rel="stylesheet" href="/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/ionicons.min.css">
-  <link rel="stylesheet" href="/css/animate.css">
-  <link rel="stylesheet" href="/css/responsive.css">
-
+  <link rel="stylesheet" href="http://localhost:4000/css/owl.carousel.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/style.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/ionicons.min.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/animate.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/responsive.css">
 
   <!-- Js -->
-  <script src="/js/vendor/modernizr-2.6.2.min.js"></script>
-  <script src="/js/vendor/jquery-1.10.2.min.js"></script>
-  <script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-  <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/owl.carousel.min.js"></script>
-  <script src="/js/plugins.js"></script>
+  <script src="http://localhost:4000/js/vendor/modernizr-2.6.2.min.js"></script>
+  <script src="http://localhost:4000/js/vendor/jquery-1.10.2.min.js"></script>
+  <script>window.jQuery || document.write('<script src="http://localhost:4000/js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+  <script src="http://localhost:4000/js/bootstrap.min.js"></script>
+  <script src="http://localhost:4000/js/owl.carousel.min.js"></script>
+  <script src="http://localhost:4000/js/plugins.js"></script>
 
-  <script src="/js/min/waypoints.min.js"></script>
-  <script src="/js/jquery.counterup.js"></script>
-
-
+  <script src="http://localhost:4000/js/min/waypoints.min.js"></script>
+  <script src="http://localhost:4000/js/jquery.counterup.js"></script>
 
 
 
 
-  <script src="/js/main.js"></script>
-  <script src="/js/plugins/jquery.mixitup.min.js"></script>
+
+
+  <script src="http://localhost:4000/js/main.js"></script>
+  <script src="http://localhost:4000/js/plugins/jquery.mixitup.min.js"></script>
 
 </head>
 
   <body id="js-body">
-    
 
     <!--[if lt IE 9]><div class="upgrade notice-warning"><strong>Your browser is quite old!</strong> Why not <a href="http://whatbrowser.org/">upgrade to a newer one</a> to better enjoy this site?</div><![endif]-->
 
@@ -65,8 +63,8 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">
-              <img src="/images/aria-logo.png" alt="Apache ARIA TOSCA">
+            <a class="navbar-brand" href="http://localhost:4000/">
+              <img src="http://localhost:4000/images/aria-logo.png" alt="Apache ARIA TOSCA">
             </a>
           </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -77,19 +75,26 @@
 	<li class="home"><a href="/">Apache ARIA TOSCA</a></li>
 	
     
-    <li><a href="/about/" >About</a></li>
+    <li><a href="http://localhost:4000/about/" >About
+			
   
     
-    <li><a href="/community/" >Community</a></li>
+    <li><a href="http://localhost:4000/community/" >Community
+			
   
     
-    <li><a href="/getting-started/" >Getting Started</a></li>
+    <li><a href="http://localhost:4000/getting-started/" >Getting Started
+			
   
     
-    <li><a href="/getting-started/" >Docs</a></li>
+    <li><a href="http://ariatosca.incubator.apache.org/docs/html/index.html" target="_blank">Docs
+			
+			<i class="fa fa-external-link" aria-hidden="true"></i></a></li>
+			
   
     
-    <li><a href="/roadmap/" >Roadmap</a></li>
+    <li><a href="http://localhost:4000/roadmap/" >Roadmap
+			
   
 </ul>
 
@@ -140,11 +145,11 @@
 
 <p>ARIA offers a library with a programmable interface that allows embedding ARIA into collaborative projects, to enable organizations looking to incorporate TOSCA orchestration capabilities into their solutions.</p>
 
-<p><img src="/images/aria-architecture.png" alt="ARIA Architecture" class="center-image" /></p>
+<p><img src="http://localhost:4000/images/aria-architecture.png" alt="ARIA Architecture" class="center-image" /></p>
 
 <p>Through ARIA, application vendors will be able to test and run their applications easily, from blueprint to deployment, without the former hassle of developing the orchestration engine themselves, simplifying TOSCA certification and validation exponentially.</p>
 
-<p><img src="/images/aria-tosca-workflow.png" alt="ARIA Architecture" class="center-image" /></p>
+<p><img src="http://localhost:4000/images/aria-tosca-workflow.png" alt="ARIA Architecture" class="center-image" /></p>
 
 <h2 id="aria-tosca-parser">ARIA TOSCA Parser</h2>
 <p>ARIA includes a TOSCA DSL parser, the parser’s role is to interpret the TOSCA template, create an in-memory graph of the application and validate template correctness. TOSCA provides a typing system with normative node types to describe the possible building blocks for constructing a service template, as well as relationship types to describe possible kinds of relations. Both node and relationship types may define life-cycle operations to implement the behavior an orchestration engine can invoke when instantiating a service template. The template files are written in declarative YAML language using TOSCA normative types. Technology specific types can be introduced via ARIA Plugins without any modifications of the parser code. ARIA natively supports TOSCA Simple Profile 1.0, and TOSCA Simple Profile for Network Function Virtualization.</p>
@@ -198,7 +203,7 @@
 			</div><!-- .col-md-7 close -->
 			<div class="col-md-2 col-sm-12">
 				<div class="block" valign="middle" style="vertical-align: middle;">
-					<img src="/images/incubator_power_ring.png" alt="ARIA Podling"  >
+					<img src="http://localhost:4000/images/incubator_power_ring.png" alt="ARIA Podling"  >
 				</div>
 			</div><!-- .col-md-5 close -->
 		</div>
@@ -214,16 +219,16 @@
 					<ul class="menu-item">
 					
 			      
-						<li><a href="/about/" >About</a></li>
+						<li><a href="http://localhost:4000/about/" >About</a></li>
 					
 			      
-						<li><a href="/community/" >Community</a></li>
+						<li><a href="http://localhost:4000/community/" >Community</a></li>
 					
 			      
-						<li><a href="/getting-started/" >Getting Started</a></li>
+						<li><a href="http://localhost:4000/getting-started/" >Getting Started</a></li>
 					
 			      
-						<li><a href="/roadmap/" >Roadmap</a></li>
+						<li><a href="http://localhost:4000/roadmap/" >Roadmap</a></li>
 					
 					</ul>
 				</div>
@@ -237,12 +242,12 @@
 
     </div>
 
-    <script src="/js/vendor/jquery-1.10.2.min.js"></script>
-    <script src="/js/plugins/jquery.mixitup.min.js"></script>
-    <script src="/js/owl.carousel.min.js"></script>
-    <script src="/js/jquery.counterup.js"></script>
+    <script src="http://localhost:4000/js/vendor/jquery-1.10.2.min.js"></script>
+    <script src="http://localhost:4000/js/plugins/jquery.mixitup.min.js"></script>
+    <script src="http://localhost:4000/js/owl.carousel.min.js"></script>
+    <script src="http://localhost:4000/js/jquery.counterup.js"></script>
 
-    <script src="/js/main.js"></script>
+    <script src="http://localhost:4000/js/main.js"></script>
 
   </body>
 
