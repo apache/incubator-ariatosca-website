@@ -8,7 +8,7 @@
     {% endif %}
     <li><a href="{{ domain }}{{ link.url }}" {% if link.url contains 'http' %}target="_blank"{% endif %}>{{ link.title }}
 			{% if link.url contains 'http' %}
-			<i class="fa fa-external-link" aria-hidden="true"></i></a></li>
+			<i class="fa fa-external-link" aria-hidden="true"></i></a></li> 
 			{% endif %}
   {% endfor %}
 </ul>
