@@ -98,3 +98,13 @@ License
 
 ARIA is licensed under the
 [Apache License 2.0](https://github.com/apache/incubator-ariatosca/blob/master/LICENSE).
+
+
+Sample install/command files for different ARIA releases
+--------------------------------------------------------
+
+| Aria Release Version 	|   	|                                                   Ubuntu 16.04                                                   	|   	|                                                  CentOS 7                                                 	|   	|   	|
+|:--------------------:	|:-:	|:----------------------------------------------------------------------------------------------------------------:	|:-:	|:---------------------------------------------------------------------------------------------------------:	|:-:	|:-:	|
+|         0.1.1        	|   	| [ubuntu16.04_aria0.1.1](https://github.com/apache/incubator-ariatosca-website/samples/Ubuntu/ubuntu1604_aria011) 	|   	| [centos7_aria0.1.1](https://github.com/apache/incubator-ariatosca-website/samples/CentOS/centos7_aria011) 	|   	|   	|
+|                      	|   	|                                                                                                                  	|   	|                                                                                                           	|   	|   	|
+|                      	|   	|                                                                                                                  	|   	|                                                                                                           	|   	|   	|
