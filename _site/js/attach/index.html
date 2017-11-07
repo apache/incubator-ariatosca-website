@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="xterm.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="xterm.js"></script>
+    <script src="attach.js"></script>
+  </head>
+  <body>
+      <div class="container">
+        <div id="terminal-container"></div>
+      </div>
+    <script>
+
+      var term = new Terminal();
+      var url = "ws:/localhost:5000/v1.19/containers/a04417594831/attach/ws?logs=1&stream=1&stdin=1&stdout=1&stderr=1";
+      sock = new WebSocket(url);
+      term.attach(sock);
+      term.open(document.getElementById('terminal-container'));
+    </script>
+  </body>
+</html>
