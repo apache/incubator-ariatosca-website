@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>Getting Started with ARIA TOSCA • Apache ARIA TOSCA</title>
+  <title>About ARIA TOSCA • Apache ARIA TOSCA</title>
 
-
-
-
+  
+  
+  
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -22,10 +22,6 @@
   <link rel="stylesheet" href="http://localhost:4000/css/animate.css">
   <link rel="stylesheet" href="http://localhost:4000/css/responsive.css">
 
-  <link rel="stylesheet" href="http://localhost:4000/css/attach/xterm.css">
-  <link rel="stylesheet" href="http://localhost:4000/css/attach/style.css">
-
-
   <!-- Js -->
   <script src="http://localhost:4000/js/vendor/modernizr-2.6.2.min.js"></script>
   <script src="http://localhost:4000/js/vendor/jquery-1.10.2.min.js"></script>
@@ -36,10 +32,6 @@
 
   <script src="http://localhost:4000/js/min/waypoints.min.js"></script>
   <script src="http://localhost:4000/js/jquery.counterup.js"></script>
-
-
-    <script src="http://localhost:4000/js/attach/xterm.js"></script>
-    <script src="http://localhost:4000/js/attach/attach.js"></script>
 
 
 
@@ -81,36 +73,9 @@
               <nav role="navigation" class="menu top-menu">
                   <ul class="nav navbar-nav navbar-right">
 	<li class="home"><a href="/">Apache ARIA TOSCA</a></li>
-
-
+	
+    
     <li><a href="http://localhost:4000/about/" >About
-<<<<<<< HEAD:getting-started/index.html
-
-				</a></li>
-
-
-    <li><a href="http://localhost:4000/community/" >Community
-
-				</a></li>
-
-
-    <li><a href="http://localhost:4000/getting-started/" >Getting Started
-
-				</a></li>
-
-
-    <li><a href="http://ariatosca.incubator.apache.org/docs/html/index.html" target="_blank">Docs
-
-			 <i class="fa fa-external-link" aria-hidden="true"></i>
-
-				</a></li>
-
-
-    <li><a href="http://localhost:4000/roadmap/" >Roadmap
-
-				</a></li>
-
-=======
 			
   
     
@@ -131,7 +96,6 @@
     <li><a href="http://localhost:4000/roadmap/" >Roadmap
 			
   
->>>>>>> parent of 9c59ff4... Fixing docs location bug:_site/getting-started/index.html
 </ul>
 
               </nav>
@@ -148,15 +112,15 @@
     <div id="page-wrapper">
       <div id="main" role="main">
 	<article class="wrap" itemscope itemtype="http://schema.org/Article">
-
-
+		
+		
 
 		<section id="global-header">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
 						<div class="block">
-							<h1>Getting Started with ARIA TOSCA</h1>
+							<h1>About ARIA TOSCA</h1>
 							<p></p>
 						</div>
 					</div>
@@ -171,164 +135,60 @@
 				<section id="intro">
 		      <div class="container">
 		        <div class="row">
-								<h2 id="installation">Installation</h2>
+								<p>ARIA is a vendor neutral and technology independent implementation of the OASIS TOSCA specification. ARIA offers a Command Line Interface(CLI) to develop and execute TOSCA templates, and an easily consumable Software Development Kit(SDK) for building TOSCA enabled software. ARIA is an open source, and open governance python project, Apache Software Foundation Incubation, offering an implementation library of the OASIS TOSCA specification.</p>
 
-<p>ARIA is <a href="https://pypi.python.org/pypi/apache-ariatosca">available on PyPI</a>.</p>
+<p>ARIA was formed to advance adoption of the TOSCA standard and accelerate the industry’s journey towards application orchestration in cloud environments.</p>
 
-<p>ARIA requires Python 2.6/2.7. Python 3 is currently not supported.</p>
+<p>ARIA, and TOSCA alike, were born out of the market need for a completely vendor / cloud / technology neutral orchestration that allows for portability and interoperability. ARIA is expected to accelerate the development around the TOSCA specification, advance its adoption, demonstrate simplified portability of TOSCA orchestration, and increase agility through more rapid community contributed iterations.</p>
 
-<p>To install ARIA directly from PyPI (using a <code class="highlighter-rouge">wheel</code>), use::</p>
+<p>ARIA it is a framework for implementing orchestration software based on “Topology and Orchestration Specification for Cloud Applications(TOSCA)” a leading cloud-agnostic templating model formulated by the OASIS Foundation.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>pip install --upgrade pip setuptools
-pip install apache-ariatosca
-</code></pre>
-</div>
+<p>ARIA offers a library with a programmable interface that allows embedding ARIA into collaborative projects, to enable organizations looking to incorporate TOSCA orchestration capabilities into their solutions.</p>
 
-<p>To install ARIA from source, download the source tarball from
-<a href="https://pypi.python.org/pypi/apache-ariatosca">PyPI</a>, extract and <code class="highlighter-rouge">cd</code> into the extract dir, and run::</p>
+<p><img src="http://localhost:4000/images/aria-architecture.png" alt="ARIA Architecture" class="center-image" /></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>pip install --upgrade pip setuptools
-pip install .
-</code></pre>
-</div>
+<p>Through ARIA, application vendors will be able to test and run their applications easily, from blueprint to deployment, without the former hassle of developing the orchestration engine themselves, simplifying TOSCA certification and validation exponentially.</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>The source package comes along with relevant examples, documentation, <code class="highlighter-rouge">requirements.txt</code> (for installing specifically the frozen dependencies’ versions with which ARIA was tested) and more.</td>
-    </tr>
-    <tr>
-      <td> </td>
-    </tr>
-    <tr>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>ARIA has additional optional dependencies. These are required for running operations over SSH.</td>
-    </tr>
-    <tr>
-      <td>Below are instructions on how to install these dependencies, including required system dependencies per OS.</td>
-    </tr>
-    <tr>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Note: These dependencies may have varying licenses which may not be compatible with Apache license 2.0.</td>
-    </tr>
-    <tr>
-      <td> </td>
-    </tr>
-  </tbody>
-</table>
+<p><img src="http://localhost:4000/images/aria-tosca-workflow.png" alt="ARIA Architecture" class="center-image" /></p>
 
-<p><strong>Ubuntu/Debian</strong> (tested on Ubuntu14.04, Ubuntu16.04)::</p>
+<h2 id="aria-tosca-parser">ARIA TOSCA Parser</h2>
+<p>ARIA includes a TOSCA DSL parser, the parser’s role is to interpret the TOSCA template, create an in-memory graph of the application and validate template correctness. TOSCA provides a typing system with normative node types to describe the possible building blocks for constructing a service template, as well as relationship types to describe possible kinds of relations. Both node and relationship types may define life-cycle operations to implement the behavior an orchestration engine can invoke when instantiating a service template. The template files are written in declarative YAML language using TOSCA normative types. Technology specific types can be introduced via ARIA Plugins without any modifications of the parser code. ARIA natively supports TOSCA Simple Profile 1.0, and TOSCA Simple Profile for Network Function Virtualization.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>apt-get install -y python-dev gcc libffi-dev libssl-dev
-pip install aria[ssh]
-</code></pre>
-</div>
+<h4 id="tosca-templates-include">TOSCA Templates include:</h4>
+<ul>
+  <li>YAML Topology Template</li>
+  <li>Plugins</li>
+  <li>Workflows</li>
+  <li>Resources such as scripts and others</li>
+</ul>
 
-<p><strong>Centos</strong> (tested on Centos6.6, Centos7)::</p>
+<h2 id="aria-workflows">ARIA Workflows</h2>
+<p>ARIA Workflows are automated process algorithms that allow dynamic interaction with the graph described by the application topology template. ARIA Workflows describe the flow of the automation by determining when which tasks will be executed. A task may be an operation, optionally implemented by a plugin, or other actions, including arbitrary code or scripts. ARIA Workflows can be embedded within the TOSCA Template to be able to access the graph dynamically. Workflows are implemented as Python code using dedicated APIs and a framework to access the graph and the runtime context of the application, the context provide access to the object graph described in the TOSCA template.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>yum install -y python-devel gcc libffi-devel openssl-devel
-pip install aria[ssh]
-</code></pre>
-</div>
+<p>ARIA comes with a number of built-in workflows - these are the workflows for install, uninstall, scale and heal. Built-in workflows are not special in any way - ARIA supports creating custom workflows that use the same APIs build-in workflows are using.</p>
 
-<p><strong>Archlinux</strong>::</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>pacman -Syu --noconfirm python2 gcc libffi openssl
-pip2 install aria[ssh]
-</code></pre>
-</div>
-
-<p><strong>Windows</strong> (tested on Win10)::</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code># no additional system requirements are needed
-pip install aria[ssh]
-</code></pre>
-</div>
-
-<p><strong>MacOS</strong>::</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code># TODO
-</code></pre>
-</div>
-
-<p>To install <code class="highlighter-rouge">pip</code>, either use your distro’s package management system, or run::</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>wget http://bootstrap.pypa.io/get-pip.py
-python get-pip.py
-</code></pre>
-</div>
-
-<h2 id="getting-started">Getting Started!</h2>
-
-<p>This section will describe how to run a simple “Hello World” example.</p>
-
-<p>First, provide ARIA with the ARIA “hello world”(can be download <a href="https://github.com/apache/incubator-ariatosca/tree/master/examples/hello-world">here</a>) service-template and name it (e.g.
-<code class="highlighter-rouge">my-service-template</code>)::</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>aria service-templates store examples/hello-world/helloworld.yaml my-service-template
-</code></pre>
-</div>
-
-<p>Now create a service based on this service-template and name it (e.g. <code class="highlighter-rouge">my-service</code>)::</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>aria services create my-service -t my-service-template
-</code></pre>
-</div>
-
-<p>Finally, start an <code class="highlighter-rouge">install</code> workflow execution on <code class="highlighter-rouge">my-service</code> like so::</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>aria executions start install -s my-service
-</code></pre>
-</div>
-
-<p>You should now have a simple web-server running on your local machine. You can try visiting
-<code class="highlighter-rouge">http://localhost:9090</code> to view your deployed application.</p>
-
-<p>To uninstall and clean your environment, follow these steps::</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>aria executions start uninstall -s my-service
-aria services delete my-service
-aria service-templates delete my-service-template
-</code></pre>
-</div>
-
-  <h2>
-      ARIA Console
-  </h2>
-  <div class="container">
-    <div id="terminal-container"></div>
-  </div>
-
-
-
-<h2 id="license">License</h2>
-
-<p>ARIA is licensed under the
-<a href="https://github.com/apache/incubator-ariatosca/blob/master/LICENSE">Apache License 2.0</a>.</p>
+<h2 id="aria-plugins">ARIA Plugins</h2>
+<p>ARIA Plugins allow extending the TOSCA normative types dynamically by adding new technology specific node types and relationship types, without changing the code of the ARIA TOSCA Parser. The plugins introduce new node types and the implementation that realizes the logic behind every new node type. The plugin based types are isolated, allowing to use different versions of the same plugin in a single blueprint - for example support OpenStack Kilo and OpenStack Juno in the same template. It also allows combining types of different technologies - for example OpenStack nodes with VMware, Amazon, or other types such as Router, Firewall, Kubernetes and others. The work of interacting with IaaS APIs, running scripts, Configuration Management tools, Monitoring tools and any other tools used when managing applications is done by the ARIA Plugins. Plugins can be included as part of the application template package and loaded dynamically. ARIA includes set of plugins that can be used as is or as reference for implementing for new plugins.</p>
 
 		        </div>
 		      </div>
 		    </section>
 				<hr />
 				<footer class="page-footer">
-
-
-
+					
+					
+					
 				</footer><!-- /.footer -->
 				<aside>
-
+					
 				</aside>
 			</div><!-- /.content -->
 		</div><!-- /.inner-wrap -->
-
+		
 	</article><!-- ./wrap -->
 </div><!-- /#main -->
 
-
+      
 
 <!-- Wrapper Start -->
 <section id="intro" style="padding-top:30px; padding-bottom:30px">
@@ -357,19 +217,19 @@ aria service-templates delete my-service-template
 				<div class="footer-manu">
 
 					<ul class="menu-item">
-
-
+					
+			      
 						<li><a href="http://localhost:4000/about/" >About</a></li>
-
-
+					
+			      
 						<li><a href="http://localhost:4000/community/" >Community</a></li>
-
-
+					
+			      
 						<li><a href="http://localhost:4000/getting-started/" >Getting Started</a></li>
-
-
+					
+			      
 						<li><a href="http://localhost:4000/roadmap/" >Roadmap</a></li>
-
+					
 					</ul>
 				</div>
 
@@ -388,19 +248,6 @@ aria service-templates delete my-service-template
     <script src="http://localhost:4000/js/jquery.counterup.js"></script>
 
     <script src="http://localhost:4000/js/main.js"></script>
-
-
-
-    <script>
-
-     // AJAX to get contianer uuid from http://127.0.0.1:8000/api/runaria
-
-      var term = new Terminal();
-      var url = "ws:/localhost:5000/v1.19/containers/a04417594831/attach/ws?logs=1&stream=1&stdin=1&stdout=1&stderr=1";
-      sock = new WebSocket(url);
-      term.attach(sock);
-      term.open(document.getElementById('terminal-container'));
-    </script>
 
   </body>
 

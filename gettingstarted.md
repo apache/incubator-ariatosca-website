@@ -8,7 +8,7 @@ share: false
 Installation
 ------------
 
-ARIA is [available on PyPI](https://pypi.python.org/pypi/apache-ariatosca) .
+ARIA is [available on PyPI](https://pypi.python.org/pypi/apache-ariatosca).
 
 ARIA requires Python 2.6/2.7. Python 3 is currently not supported.
 
