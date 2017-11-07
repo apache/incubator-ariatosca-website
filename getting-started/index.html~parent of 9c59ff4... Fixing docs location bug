@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>ARIA TOSCA Community • Apache ARIA TOSCA</title>
+  <title>Getting Started with ARIA TOSCA • Apache ARIA TOSCA</title>
 
   
   
@@ -115,7 +115,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="block">
-							<h1>ARIA TOSCA Community</h1>
+							<h1>Getting Started with ARIA TOSCA</h1>
 							<p></p>
 						</div>
 					</div>
@@ -130,29 +130,135 @@
 				<section id="intro">
 		      <div class="container">
 		        <div class="row">
-								<h2 id="contribution">Contribution</h2>
+								<h2 id="installation">Installation</h2>
 
-<p>You are welcome and encouraged to participate and contribute to the ARIA project.</p>
+<p>ARIA is <a href="https://pypi.python.org/pypi/apache-ariatosca">available on PyPI</a>.</p>
 
-<p>Please see our guide to
-<a href="https://cwiki.apache.org/confluence/display/ARIATOSCA/Contributing+to+ARIA">Contributing to ARIA</a></p>
+<p>ARIA requires Python 2.6/2.7. Python 3 is currently not supported.</p>
 
-<h2 id="resources">Resources</h2>
+<p>To install ARIA directly from PyPI (using a <code class="highlighter-rouge">wheel</code>), use::</p>
 
-<ul>
-  <li><a href="https://issues.apache.org/jira/browse/ARIA">Issue tracker</a></li>
-  <li>Dev mailing list: dev@ariatosca.incubator.apache.org</li>
-  <li>User mailing list: user@ariatosca.incubator.apache.org</li>
-</ul>
+<div class="highlighter-rouge"><pre class="highlight"><code>pip install --upgrade pip setuptools
+pip install apache-ariatosca
+</code></pre>
+</div>
 
-<p>Subscribe by sending a mail to <code class="highlighter-rouge">&lt;group&gt;-subscribe@ariatosca.incubator.apache.org</code> (e.g.
-<code class="highlighter-rouge">dev-subscribe@ariatosca.incubator.apache.org</code>).
-See information on how to subscribe to mailing lists <a href="https://www.apache.org/foundation/mailinglists.html">here</a>.</p>
+<p>To install ARIA from source, download the source tarball from
+<a href="https://pypi.python.org/pypi/apache-ariatosca">PyPI</a>, extract and <code class="highlighter-rouge">cd</code> into the extract dir, and run::</p>
 
-<p>For past correspondence, see the
-<a href="http://mail-archives.apache.org/mod_mbox/incubator-ariatosca-dev/">dev mailing list archive</a></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>pip install --upgrade pip setuptools
+pip install .
+</code></pre>
+</div>
 
-<p>If you have any questions or ideas regarding contribution, please let us know on the dev@ariatosca.apache.org mailing list.</p>
+<table>
+  <tbody>
+    <tr>
+      <td>The source package comes along with relevant examples, documentation, <code class="highlighter-rouge">requirements.txt</code> (for installing specifically the frozen dependencies’ versions with which ARIA was tested) and more.</td>
+    </tr>
+    <tr>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>ARIA has additional optional dependencies. These are required for running operations over SSH.</td>
+    </tr>
+    <tr>
+      <td>Below are instructions on how to install these dependencies, including required system dependencies per OS.</td>
+    </tr>
+    <tr>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Note: These dependencies may have varying licenses which may not be compatible with Apache license 2.0.</td>
+    </tr>
+    <tr>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Ubuntu/Debian</strong> (tested on Ubuntu14.04, Ubuntu16.04)::</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>apt-get install -y python-dev gcc libffi-dev libssl-dev
+pip install aria[ssh]
+</code></pre>
+</div>
+
+<p><strong>Centos</strong> (tested on Centos6.6, Centos7)::</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>yum install -y python-devel gcc libffi-devel openssl-devel
+pip install aria[ssh]
+</code></pre>
+</div>
+
+<p><strong>Archlinux</strong>::</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>pacman -Syu --noconfirm python2 gcc libffi openssl
+pip2 install aria[ssh]
+</code></pre>
+</div>
+
+<p><strong>Windows</strong> (tested on Win10)::</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># no additional system requirements are needed
+pip install aria[ssh]
+</code></pre>
+</div>
+
+<p><strong>MacOS</strong>::</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># TODO
+</code></pre>
+</div>
+
+<p>To install <code class="highlighter-rouge">pip</code>, either use your distro’s package management system, or run::</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>wget http://bootstrap.pypa.io/get-pip.py
+python get-pip.py
+</code></pre>
+</div>
+
+<h2 id="getting-started">Getting Started</h2>
+
+<p>This section will describe how to run a simple “Hello World” example.</p>
+
+<p>First, provide ARIA with the ARIA “hello world”(can be download <a href="https://github.com/apache/incubator-ariatosca/tree/master/examples/hello-world">here</a>) service-template and name it (e.g.
+<code class="highlighter-rouge">my-service-template</code>)::</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>aria service-templates store examples/hello-world/helloworld.yaml my-service-template
+</code></pre>
+</div>
+
+<p>Now create a service based on this service-template and name it (e.g. <code class="highlighter-rouge">my-service</code>)::</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>aria services create my-service -t my-service-template
+</code></pre>
+</div>
+
+<p>Finally, start an <code class="highlighter-rouge">install</code> workflow execution on <code class="highlighter-rouge">my-service</code> like so::</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>aria executions start install -s my-service
+</code></pre>
+</div>
+
+<p>You should now have a simple web-server running on your local machine. You can try visiting
+<code class="highlighter-rouge">http://localhost:9090</code> to view your deployed application.</p>
+
+<p>To uninstall and clean your environment, follow these steps::</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>aria executions start uninstall -s my-service
+aria services delete my-service
+aria service-templates delete my-service-template
+</code></pre>
+</div>
+
+<h2 id="license">License</h2>
+
+<p>ARIA is licensed under the
+<a href="https://github.com/apache/incubator-ariatosca/blob/master/LICENSE">Apache License 2.0</a>.</p>
 
 		        </div>
 		      </div>
