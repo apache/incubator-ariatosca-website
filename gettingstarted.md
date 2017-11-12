@@ -71,7 +71,7 @@ Getting Started
 
 This section will describe how to run a simple "Hello World" example.
 
-First, provide ARIA with the ARIA "hello world"(can be download [here](https://github.com/apache/incubator-ariatosca/tree/master/examples/hello-world)) service-template and name it (e.g.
+First, provide ARIA with the ARIA "hello world"(can be downloaded [here](https://github.com/apache/incubator-ariatosca/tree/master/examples/hello-world)) service-template and name it (e.g.
 ``my-service-template``)::
 
     aria service-templates store examples/hello-world/helloworld.yaml my-service-template
@@ -99,3 +99,16 @@ License
 
 ARIA is licensed under the
 [Apache License 2.0](https://github.com/apache/incubator-ariatosca/blob/master/LICENSE).
+
+
+Sample install/command files for different ARIA releases
+--------------------------------------------------------
+
+0.1.1                                                                                                                                          
+-----                                                                                                                                          
+                                                                                                                                               
+[Ubuntu 16.04](https://github.com/apache/incubator-ariatosca-website/samples/Ubuntu/ubuntu1604_aria011)                                        
+                                                                                                                                               
+[CenOS 7](https://github.com/apache/incubator-ariatosca-website/samples/CentOS/centos7_aria011)                                                
+                                                                                                                                               
+Docker  TBD
