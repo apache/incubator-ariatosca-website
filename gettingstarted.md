@@ -72,22 +72,22 @@ Getting Started
 This section will describe how to run a simple "Hello World" example.
 
 First, provide ARIA with the ARIA "hello world"(can be downloaded [here](https://github.com/apache/incubator-ariatosca/tree/master/examples/hello-world)) service-template and name it (e.g.
-``my-service-template``)::
+``my-service-template``):
 
     aria service-templates store examples/hello-world/helloworld.yaml my-service-template
 
-Now create a service based on this service-template and name it (e.g. ``my-service``)::
+Now create a service based on this service-template and name it (e.g. ``my-service``):
 
     aria services create my-service -t my-service-template
 
-Finally, start an ``install`` workflow execution on ``my-service`` like so::
+Finally, start an ``install`` workflow execution on ``my-service`` like so:
 
     aria executions start install -s my-service
 
 You should now have a simple web-server running on your local machine. You can try visiting
 ``http://localhost:9090`` to view your deployed application.
 
-To uninstall and clean your environment, follow these steps::
+To uninstall and clean your environment, follow these steps:
 
     aria executions start uninstall -s my-service
     aria services delete my-service
@@ -106,9 +106,9 @@ Sample install/command files for different ARIA releases
 
 0.1.1                                                                                                                                          
 -----                                                                                                                                          
-                                                                                                                                               
+
 [Ubuntu 16.04](https://github.com/apache/incubator-ariatosca-website/samples/Ubuntu/ubuntu1604_aria011)                                        
-                                                                                                                                               
+
 [CenOS 7](https://github.com/apache/incubator-ariatosca-website/samples/CentOS/centos7_aria011)                                                
-                                                                                                                                               
+
 Docker  TBD
