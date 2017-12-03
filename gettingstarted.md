@@ -5,8 +5,8 @@ permalink: /getting-started/
 share: false
 ---
 
-Installation
-------------
+Package-Based Installation
+--------------------------
 
 ARIA is [available on PyPI](https://pypi.python.org/pypi/apache-ariatosca).
 
@@ -16,6 +16,10 @@ To install ARIA directly from PyPI (using a ``wheel``), use::
 
     pip install --upgrade pip setuptools
     pip install apache-ariatosca
+
+
+Source-based Installations
+--------------------------
 
 To install ARIA from source, download the source tarball from
 [PyPI](https://pypi.python.org/pypi/apache-ariatosca), extract and ``cd`` into the extract dir, and run::
@@ -34,12 +38,12 @@ To install ARIA from source, download the source tarball from
 
 **Ubuntu/Debian** (tested on Ubuntu14.04, Ubuntu16.04)::
 
-    apt-get install -y python-dev gcc libffi-dev libssl-dev
+    apt-get install -y python-dev gcc libffi-dev libssl-dev git
     pip install apache-ariatosca[ssh]
 
 **Centos** (tested on Centos6.6, Centos7)::
 
-    yum install -y python-devel gcc libffi-devel openssl-devel
+    yum install -y python-devel gcc libffi-devel openssl-devel git
     pip install apache-ariatosca[ssh]
 
 **Archlinux**::
@@ -65,8 +69,8 @@ To install ``pip``, either use your distro's package management system, or run::
 
 
 
-Getting Started
----------------
+"Hello World" Example
+---------------------
 
 
 This section will describe how to run a simple "Hello World" example.
