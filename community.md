@@ -32,3 +32,16 @@ For past correspondence, see the
 
 
 If you have any questions or ideas regarding contribution, please let us know on the dev@ariatosca.apache.org mailing list.
+
+Gain writing permissions on JIRA and Confluence
+-----------------------------------------------
+
+Once you have created an account on Confluence and JIRA, you need to request writing permissions by sending an email to the general@incubator.apache.org mailing list. You must include your JIRA and Confluence usernames.
+
+Be sure that you request permissions for the AriaTosca project and not Apache Incubator.
+
+Join the Slack channel
+----------------------
+
+To join ARIA on Slack, send an email to the dev@ariatosca.apache.org mailing list. One of the workspace admins will send you an invitation.
+
