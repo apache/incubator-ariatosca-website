@@ -1,0 +1,24 @@
+#Below commands to install aria may need to be run with root priviliges
+apt-get update && apt-get install -y python-dev gcc libffi-dev libssl-dev python-pip git wget
+
+pip install --upgrade pip setuptools
+
+pip install apache-ariatosca[ssh]==0.1.1 --no-binary apache-ariatosca
+
+#Below commands are to ensure we get the correct example template files
+cd /tmp
+
+git clone https://github.com/apache/incubator-ariatosca.git /tmp/incubator-ariatosca
+
+cd /tmp/incubator-ariatosca
+
+git checkout tags/0.1.1
+
+#Below commands to be run from the /tmp/incubator-ariatosca directory
+aria service-templates store examples/hello-world/helloworld.yaml my-service-template
+
+aria services create my-service -t my-service-template
+
+aria executions start install -s my-service
+
+#Next launch a web browser and type http://localhost:9090

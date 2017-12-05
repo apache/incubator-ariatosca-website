@@ -145,20 +145,28 @@
 				<section id="intro">
 		      <div class="container">
 		        <div class="row">
-								<h2 id="installation">Installation</h2>
+								<p>There are multiple ways of installing and running ARIA TOSCA. Specifically, there
+essentially two different branches of installations: user and developer. Both
+are documented below.</p>
 
-<p>ARIA is <a href="https://pypi.python.org/pypi/apache-ariatosca">available on PyPI</a>.</p>
+<p>While the instructions below strive to be complete, we’re human and make mistakes from time to time. In situations where something doesn’t work as described, do not hesitate to reach out to the community for assistance by sending email to dev@ariatosca.incubator.apache.org</p>
 
-<p>ARIA requires Python 2.6/2.7. Python 3 is currently not supported.</p>
+<h2 id="package-based-pip-package-installation">Package-Based PIP Package Installation</h2>
 
-<p>To install ARIA directly from PyPI (using a <code class="highlighter-rouge">wheel</code>), use::</p>
+<p>ARIA TOSCA is <a href="https://pypi.python.org/pypi/apache-ariatosca">available on PyPI</a>.</p>
+
+<p>ARIA TOSCA requires Python 2.6/2.7. Python 3 is currently not supported.</p>
+
+<p>To install ARIA TOSCA directly from PyPI (using a <code class="highlighter-rouge">wheel</code>), use::</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>pip install --upgrade pip setuptools
 pip install apache-ariatosca
 </code></pre>
 </div>
 
-<p>To install ARIA from source, download the source tarball from
+<h2 id="source-based-pip-package-installation">Source-based PIP Package Installation</h2>
+
+<p>To install ARIA TOSCA from source, download the source tarball from
 <a href="https://pypi.python.org/pypi/apache-ariatosca">PyPI</a>, extract and <code class="highlighter-rouge">cd</code> into the extract dir, and run::</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>pip install --upgrade pip setuptools
@@ -169,7 +177,7 @@ pip install .
 <table>
   <tbody>
     <tr>
-      <td>The source package comes along with relevant examples, documentation, <code class="highlighter-rouge">requirements.txt</code> (for installing specifically the frozen dependencies’ versions with which ARIA was tested) and more.</td>
+      <td>The source package comes along with relevant examples, documentation, <code class="highlighter-rouge">requirements.txt</code> (for installing specifically the frozen dependencies’ versions with which ARIA TOSCA was tested) and more.</td>
     </tr>
     <tr>
       <td> </td>
@@ -178,7 +186,7 @@ pip install .
       <td> </td>
     </tr>
     <tr>
-      <td>ARIA has additional optional dependencies. These are required for running operations over SSH.</td>
+      <td>ARIA TOSCA has additional optional dependencies. These are required for running operations over SSH.</td>
     </tr>
     <tr>
       <td>Below are instructions on how to install these dependencies, including required system dependencies per OS.</td>
@@ -197,14 +205,14 @@ pip install .
 
 <p><strong>Ubuntu/Debian</strong> (tested on Ubuntu14.04, Ubuntu16.04)::</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>apt-get install -y python-dev gcc libffi-dev libssl-dev
+<div class="highlighter-rouge"><pre class="highlight"><code>apt-get install -y python-dev gcc libffi-dev libssl-dev 
 pip install apache-ariatosca[ssh]
 </code></pre>
 </div>
 
 <p><strong>Centos</strong> (tested on Centos6.6, Centos7)::</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>yum install -y python-devel gcc libffi-devel openssl-devel
+<div class="highlighter-rouge"><pre class="highlight"><code>yum install -y python-devel gcc libffi-devel openssl-devel 
 pip install apache-ariatosca[ssh]
 </code></pre>
 </div>
@@ -236,24 +244,67 @@ python get-pip.py
 </code></pre>
 </div>
 
-<h2 id="getting-started">Getting Started</h2>
+<h2 id="developer-installation">Developer Installation</h2>
 
-<p>This section will describe how to run a simple “Hello World” example.</p>
+<p>Developers will want to pull their base code from github and then
+build from that locally. Note there are two code repositories for
+ARIA TOSCA: one for the website and one for the main code base. Instructions
+for pulling and running each are detailed below.</p>
 
-<p>First, provide ARIA with the ARIA “hello world”(can be download <a href="https://github.com/apache/incubator-ariatosca/tree/master/examples/hello-world">here</a>) service-template and name it (e.g.
-<code class="highlighter-rouge">my-service-template</code>)::</p>
+<p><strong>Ubuntu/Debian</strong> (tested on Ubuntu14.04, Ubuntu16.04):</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>aria service-templates store examples/hello-world/helloworld.yaml my-service-template
+<div class="highlighter-rouge"><pre class="highlight"><code>apt-get install -y python-dev gcc libffi-dev libssl-dev git
+
+# In addition to the above, install the following for website development
+sudo apt-get install ruby-dev
+sudo gem install jekyll bundler
+# you may have to install jekyll's dependancies 
+bundle install
 </code></pre>
 </div>
 
-<p>Now create a service based on this service-template and name it (e.g. <code class="highlighter-rouge">my-service</code>)::</p>
+<p><strong>Centos</strong> (tested on Centos6.6, Centos7):</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>yum install -y python-devel gcc libffi-devel openssl-devel 
+
+# In addition to the above, install the following for website development
+sudo yum install ruby-dev
+sudo gem install jekyll bundler
+# you may have to install jekyll's dependancies 
+bundle install
+</code></pre>
+</div>
+
+<p><strong>Building from your pulled code</strong> :</p>
+
+<p>Instructions are <a href="https://cwiki.apache.org/confluence/display/ARIATOSCA/Contributing+Code">here</a></p>
+
+<h2 id="running-the-generated-website">Running The Generated Website</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>The website is created using the Jekyll system. Launch the web server using the following and then browse to the URL indicated by jekyll's output:
+
+bundle exec jekyll serve
+</code></pre>
+</div>
+
+<h2 id="hello-world-example">“Hello World” Example</h2>
+
+<p>This section will describe how to run a simple “Hello World” example.</p>
+
+<p>First, provide ARIA TOSCA with the ARIA TOSCA”hello world” template (can be downloaded <a href="https://github.com/apache/incubator-ariatosca/tree/master/examples/hello-world">here</a>) service-template and name it (e.g.
+<code class="highlighter-rouge">my-service-template</code>):</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>aria service-templates store examples/hello-world/hello-world.yaml my-service-template
+</code></pre>
+</div>
+
+<p>Now create a service based on this service-template and name it (e.g. <code class="highlighter-rouge">my-service</code>):</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>aria services create my-service -t my-service-template
 </code></pre>
 </div>
 
-<p>Finally, start an <code class="highlighter-rouge">install</code> workflow execution on <code class="highlighter-rouge">my-service</code> like so::</p>
+<p>Finally, start an <code class="highlighter-rouge">install</code> workflow execution on <code class="highlighter-rouge">my-service</code> like so:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>aria executions start install -s my-service
 </code></pre>
@@ -262,7 +313,7 @@ python get-pip.py
 <p>You should now have a simple web-server running on your local machine. You can try visiting
 <code class="highlighter-rouge">http://localhost:9090</code> to view your deployed application.</p>
 
-<p>To uninstall and clean your environment, follow these steps::</p>
+<p>To uninstall and clean your environment, follow these steps:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>aria executions start uninstall -s my-service
 aria services delete my-service
@@ -272,8 +323,18 @@ aria service-templates delete my-service-template
 
 <h2 id="license">License</h2>
 
-<p>ARIA is licensed under the
+<p>ARIA TOSCA is licensed under the
 <a href="https://github.com/apache/incubator-ariatosca/blob/master/LICENSE">Apache License 2.0</a>.</p>
+
+<h2 id="sample-installcommand-files-for-different-aria-tosca-releases">Sample install/command files for different ARIA TOSCA releases</h2>
+
+<h2 id="011">0.1.1</h2>
+
+<p><a href="https://github.com/apache/incubator-ariatosca-website/samples/Ubuntu/ubuntu1604_aria011">Ubuntu 16.04</a></p>
+
+<p><a href="https://github.com/apache/incubator-ariatosca-website/samples/CentOS/centos7_aria011">CenOS 7</a></p>
+
+<p>Docker  TBD</p>
 
 		        </div>
 		      </div>
