@@ -5,6 +5,19 @@ permalink: /getting-started/
 share: false
 ---
 
+Introduction to TOSCA
+---------------------
+
+The following two videos give a theoretical overview of the TOSCA specification. It is presented by one of ARIA's developers, Tal Liron. In this session, Tal talks about the [TOSCA Simple Profile in YAML](http://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.0/csprd02/TOSCA-Simple-Profile-YAML-v1.0-csprd02.html) and its implementation in ARIA.
+
+1. [Introduction to TOSCA - Part one](https://www.youtube.com/watch?v=aMkqLI6o-58)
+2. [Introduction to TOSCA - Part two](https://www.youtube.com/watch?v=6xGmpi--7-A)
+
+The slides are available [here](https://www.slideshare.net/cloudifysource/tosca-in-practice-with-aria).
+
+Installation
+------------
+
 There are multiple ways of installing and running ARIA TOSCA. Specifically, there
 essentially two different branches of installations: user and developer. Both
 are documented below.
